@@ -1,0 +1,26 @@
+.container {
+  height: var(--header-heigth);
+  box-shadow: var(--box-shadow);
+
+  display: flex;
+  align-items: center;
+
+  .logo {
+    font-weight: bold;
+    padding: 0 var(--item-padding-left);
+    letter-spacing: 2px;
+  }
+
+  .item {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: var(--transition);
+
+    &:hover {
+      background-color: var(--focus-color);
+    }
+  }
+}

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import styles from "./header.module.scss";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <header className={styles.container}>
+      <NavLink to="/" className={`${styles.logo} ${styles.item}`}>
+        LOGO
+      </NavLink>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
