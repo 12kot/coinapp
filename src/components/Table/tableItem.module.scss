@@ -1,0 +1,37 @@
+.item {
+  display: grid;
+  grid-template-columns:
+    minmax(40px, 60px) minmax(40px, 60px) minmax(105px, 1fr) repeat(
+      2,
+      minmax(105px, 1fr)
+    )
+    minmax(80px, 100px);
+  grid-template-rows: 1fr;
+  grid-column-gap: var(--gap);
+
+  //height: var(--table-item-height);
+  overflow-y: scroll;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+
+  td,
+  th {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    white-space: nowrap;
+    padding: var(--item-padding-top) var(--item-padding-left);
+  }
+
+  td:nth-child(1),
+  td:nth-child(2),
+  th:nth-child(1),
+  th:nth-child(2) {
+    justify-content: center;
+  }
+
+  td:nth-child(3),
+  th:nth-child(3) {
+    justify-content: start;
+  }
+}
