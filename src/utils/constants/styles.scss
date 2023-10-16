@@ -2,12 +2,21 @@
   --box-shadow: 0px 4px 24px rgba(88, 102, 126, 0.08),
     0px 1px 2px rgba(88, 102, 126, 0.12);
 
+  --border-color: rgba(88, 102, 126, 0.12);
+
   --focus-color: rgba(88, 102, 126, 0.12);
+  --bg-color: #fefefe;
+  --second-bg-color: #f5f7fa;
+  --negative-color: #fefefe;
+
+  --font-color: #111210;
+
   --transition: 0.5s;
 
   --page-padding-left: 16px;
   --item-padding-left: 10px;
   --item-padding-top: 12px;
 
-  --header-heigth: 45px;
+  --header-height: 45px;
+  --footer-height: 45px;
 }
