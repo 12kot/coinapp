@@ -9,7 +9,6 @@ const getPages = (
   let step = 2;
   if (activePage - 2 <= 0) step = activePage;
   if (activePage + 2 >= maxPage) step = Math.abs(maxPage - activePage - 5);
-  console.log(step, maxPage, activePage);
 
   return [...new Array(5)].map((num, i) => {
     const pageNum = activePage + i - step + 1;

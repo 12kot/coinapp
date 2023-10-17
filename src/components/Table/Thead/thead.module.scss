@@ -5,7 +5,6 @@
     position: fixed;
     top: 0;
     width: fit-content;
-    border-bottom: 1px solid var(--border-color);
     width: calc(100% - var(--page-padding-left) * 2);
   }
 
@@ -14,10 +13,13 @@
 }
 
 .container {
+  z-index: 4000;
   height: var(--header-height);
   align-items: center;
 
   .item {
+    border-bottom: 1px solid var(--border-color);
+
     th {
       button {
         font-weight: bold;

@@ -9,9 +9,11 @@ import { getCoins } from "utils/constants/API";
 
 interface Props {
   activePage: number;
+  searchItems?: TCoin[]; 
+  activeSearch?: boolean
 }
 
-const Table = ({ activePage }: Props): ReactElement => {
+const Table = ({ activePage, searchItems, activeSearch }: Props): ReactElement => {
   const { data: coins, isLoading } = useRequest<{ data: TCoin[] }>(
     getCoins(50, activePage)
   );
@@ -23,7 +25,7 @@ const Table = ({ activePage }: Props): ReactElement => {
   return (
     <table className={styles.table}>
       <Thead requestSort={requestSort} sortConfig={sortConfig} />
-      <Tbody coins={items} />
+      <Tbody coins={items} searchItems={searchItems} activeSearch={activeSearch} />
     </table>
   );
 };

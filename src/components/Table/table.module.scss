@@ -6,6 +6,7 @@
 
 .table {
   @extend .parent;
-  overflow: scroll;
+  overflow-x: scroll;
   position: relative;
+  width: 100%;
 }

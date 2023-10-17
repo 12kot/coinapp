@@ -1,8 +1,28 @@
 .container {
+  position: relative;
   &:nth-last-child(1) {
     border-bottom: 1px solid var(--border-color);
   }
 
+  .absolute {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    backdrop-filter: blur(1px);
+    background-color: var(--focus-color);
+    height: 100%;
+
+    tr:nth-last-child(1) {
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
+    tr {
+      &:hover {
+        background-color: var(--bg-color);
+      }
+    }
+  }
 }
 
 .notFound {

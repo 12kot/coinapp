@@ -11,7 +11,7 @@ export const useSearch = <T>(value: string) => {
   const debounce = useDebounce(value, 500);
 
   useEffect(() => {
-    if (debounce) {
+    if (debounce && value.length > 2) {
       const fetch = async () => {
         const res = await getData<T>(searchCoins(value));
 
