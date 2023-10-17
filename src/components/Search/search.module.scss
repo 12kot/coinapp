@@ -1,0 +1,11 @@
+.container {
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  width: 100%;
+  padding: calc(var(--item-padding-top) / 2) var(--item-padding-left);
+
+  &:focus {
+    outline: 1px solid var(--border-color);
+  }
+}
