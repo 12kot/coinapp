@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import getData from "utils/services/getData";
 
 const useRequest = <T>(url: string) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -6,15 +7,16 @@ const useRequest = <T>(url: string) => {
   const [errors, setErrors] = useState<string>("");
 
   useEffect(() => {
-    const f = async () => {
-      const res = await fetch(url);
-      if (res.ok) setData(await res.json());
-        else setErrors(res.statusText);
-        
+    const fetch = async () => {
+      const res = await getData<T>(url);
+
+      if (typeof res === "string") setErrors(res);
+      else setData(res);
+
       setIsLoading(false);
     };
 
-    f();
+    fetch();
   }, [url]);
 
   return { isLoading, data, errors };
