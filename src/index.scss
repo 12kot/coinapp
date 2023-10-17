@@ -10,7 +10,7 @@
   scroll-behavior: smooth;
   scroll-margin-top: calc(var(--header-height) + 15px);
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 div {
@@ -34,6 +34,11 @@ a,
 input {
   border: 0;
   background-color: initial;
+  color: var(--font-color);
+}
+
+input {
+  outline: 0;
 }
 
 button,

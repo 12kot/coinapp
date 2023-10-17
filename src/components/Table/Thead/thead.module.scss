@@ -8,7 +8,29 @@
     border-bottom: 1px solid var(--border-color);
     width: calc(100% - var(--page-padding-left) * 2);
   }
-  
+
   width: 100%;
   position: relative;
+}
+
+.container {
+  height: var(--header-height);
+  align-items: center;
+
+  .item {
+    th {
+      button {
+        font-weight: bold;
+        height: 100%;
+      }
+
+      svg {
+        height: 16px;
+      }
+    }
+
+    &:hover {
+      background-color: var(--bg-color);
+    }
+  }
 }

@@ -1,1 +1,15 @@
 @import "../../tableItem.module.scss";
+
+.item {
+  .green {
+    color: var(--green);
+  }
+
+  .red {
+    color: var(--red);
+  }
+
+  .symbol {
+    color: var(--second-font-color);
+  }
+}
