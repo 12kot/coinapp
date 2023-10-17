@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./pagination.module.scss";
+import scrollToElement from "utils/services/scroll";
 
 const getPages = (
   activePage: number,
@@ -10,6 +11,11 @@ const getPages = (
   if (activePage - 2 <= 0) step = activePage;
   if (activePage + 2 >= maxPage) step = Math.abs(maxPage - activePage - 5);
 
+  const handleClick = (pageNum: number) => {
+    callback(pageNum);
+    scrollToElement("thead");
+  };
+
   return [...new Array(5)].map((num, i) => {
     const pageNum = activePage + i - step + 1;
 
@@ -18,7 +24,7 @@ const getPages = (
         className={`${styles.page} ${
           activePage + 1 === pageNum && styles.active
         }`}
-        onClick={() => callback(pageNum - 1)}
+        onClick={() => handleClick(pageNum - 1)}
         key={i}
       >
         {pageNum}

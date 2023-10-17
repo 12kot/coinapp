@@ -26,6 +26,7 @@ const Thead = ({ sortConfig, requestSort }: Props): ReactElement => {
   return (
     <thead
       className={`${styles.container} ${inView && styles.active}`}
+      id="thead"
       ref={ref}
     >
       <tr className={styles.item}>
