@@ -1,0 +1,27 @@
+.aside {
+  min-width: 350px;
+  width: 100%;
+
+  min-height: calc(100vh - var(--header-height));
+  height: 100%;
+
+  padding: var(--header-height) var(--page-padding-left) var(--header-height) 0;
+  border-right: 1px solid var(--focus-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  
+  .add {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    flex-basis: 0;
+    padding: var(--header-height) 0;
+    border-right: none;
+  }
+}

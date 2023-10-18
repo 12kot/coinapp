@@ -1,0 +1,19 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: var(--blue);
+  border-radius: var(--border-radius);
+
+  transition: var(--transition);
+
+  color: var(--negative-color);
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    scale: 0.98;
+  }
+}

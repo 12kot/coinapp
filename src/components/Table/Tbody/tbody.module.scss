@@ -13,11 +13,11 @@
     background-color: var(--focus-color);
     height: 100%;
 
-    tr:nth-last-child(1) {
+    a:nth-last-child(1) {
       border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
 
-    tr {
+    a {
       &:hover {
         background-color: var(--bg-color);
       }
