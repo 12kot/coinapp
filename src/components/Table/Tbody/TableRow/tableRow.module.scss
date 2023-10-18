@@ -12,4 +12,8 @@
   .symbol {
     color: var(--second-font-color);
   }
+
+  .img {
+    height: calc(var(--table-item-height) / 1.5);
+  }
 }

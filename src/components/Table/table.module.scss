@@ -10,3 +10,11 @@
   position: relative;
   width: 100%;
 }
+
+.loader {
+  padding-top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

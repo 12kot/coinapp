@@ -6,12 +6,24 @@ import { TCoin } from "types/coin";
 import CoinAside from "components/CoinAside";
 import { useParams } from "react-router-dom";
 import CoinContent from "./CoinContent";
+import Loader from "components/Loader";
+import NotFound from "pages/NotFound";
 
 const CoinLayout = (): ReactElement => {
   const params = useParams();
 
-  const { data: coin } = useRequest<{ data: TCoin }>(getCoin(params.id || ""));
-  if (!coin) return <>ОЙ</>;
+  const { data: coin, isLoading } = useRequest<{ data: TCoin }>(
+    getCoin(params.id || "")
+  );
+
+  if (isLoading)
+    return (
+      <div className={styles.loader}>
+        <Loader />
+      </div>
+    );
+  
+  if (!coin) return <NotFound />;
 
   return (
     <main className={styles.container}>

@@ -13,6 +13,11 @@ const TableRow = ({ coin }: Props) => {
       <span className={styles.rowItem}>+</span>
       <span className={styles.rowItem}>{coin.rank}</span>
       <div className={styles.rowItem}>
+        <img
+          className={styles.img}
+          src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+          alt={coin.symbol}
+        ></img>
         {coin.name}
         <p className={styles.symbol}>{coin.symbol}</p>
       </div>

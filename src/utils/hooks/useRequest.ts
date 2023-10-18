@@ -15,7 +15,8 @@ const useRequest = <T>(url: string) => {
 
       setIsLoading(false);
     };
-
+    
+    setIsLoading(true);
     fetch();
   }, [url]);
 

@@ -19,7 +19,7 @@ const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
   if (coins.length === 0)
     return (
       <section className={styles.notFound}>
-        ТУТ ПУСТО КУДА ПАЛИШ?
+        Мы ничего не нашли 😞
       </section>
     );
 

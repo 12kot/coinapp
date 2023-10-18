@@ -5,6 +5,7 @@ import { InitHistoryRequest, THistoryItem, THistoryRequest } from "types/coin";
 import useRequest from "utils/hooks/useRequest";
 import { getCoinHistory } from "utils/constants/API";
 import ChartButtons from "./Buttons";
+import Loader from "components/Loader";
 
 interface Props {
   id: string;
@@ -13,11 +14,25 @@ interface Props {
 const CoinContent = ({ id }: Props): ReactElement => {
   const [time, setTime] = useState<THistoryRequest>(InitHistoryRequest);
 
-  const { data: history } = useRequest<{ data: THistoryItem[] }>(
+  const { data: history, isLoading } = useRequest<{ data: THistoryItem[] }>(
     getCoinHistory(id, time.interval, time.start, time.end)
   );
 
-  if (!history) return <>ОЙ</>;
+  if (isLoading)
+    return (
+      <div className={styles.loader}>
+        <Loader />
+      </div>
+    );
+
+  if (!history)
+    return (
+      <div className={styles.loader}>
+        <p>Произошла какая-то ошибка 😞</p>
+        <p>Мы уже получили код ошибки. Скоро всё заработает!</p>
+      </div>
+    );
+
   return (
     <section className={styles.content}>
       <ChartButtons timeName={time.name} setTime={setTime} />

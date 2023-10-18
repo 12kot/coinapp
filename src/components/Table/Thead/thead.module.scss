@@ -19,12 +19,14 @@
   .item {
     border-bottom: 1px solid var(--border-color);
 
-    th {
+    .rowItem {
       button {
-        font-weight: bold;
         height: 100%;
+        font-weight: bold;
       }
 
+      font-weight: bold;
+      
       svg {
         height: 16px;
       }

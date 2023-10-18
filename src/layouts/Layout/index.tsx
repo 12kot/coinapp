@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import styles from "./layout.module.scss"
 import Header from "layouts/Header";
 import Footer from "layouts/Footer";
+import Loader from "components/Loader";
 
 const Layout = (): ReactElement => {
   return (
@@ -12,7 +13,7 @@ const Layout = (): ReactElement => {
       <Suspense
         fallback={
           <div className={styles.loader}>
-            <>LOADING</>
+            <Loader />
           </div>
         }
       >

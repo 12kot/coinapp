@@ -39,11 +39,12 @@ const ChartButtons = ({ timeName, setTime }: Props): ReactElement => {
       setTime(value);
     };
 
-    return times.map((item) => (
+    return times.map((item, i) => (
       <Button
         onClick={() => handleTime(item)}
         text={item.name}
         isActive={!!(item.name === timeName)}
+        key={i}
       />
     ));
   };

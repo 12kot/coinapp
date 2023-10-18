@@ -2,3 +2,11 @@
   min-height: calc(100vh - var(--header-height));
   padding: 0 var(--page-padding-left);
 }
+
+.loader {
+  height: calc(100vh - var(--header-height));
+  padding-top: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
