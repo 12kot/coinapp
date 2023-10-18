@@ -23,11 +23,6 @@ export interface THistoryRequest {
   interval: string;
   start: number;
   end: number;
-}
-
-export const InitHistoryRequest: THistoryRequest = {
-  name: '1m',
-  interval: 'h2',
-  start: new Date().getTime() - 2628000000,
-  end: new Date().getTime()
+  format: string;
+  ticksCount: number;
 }

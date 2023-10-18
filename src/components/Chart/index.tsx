@@ -7,17 +7,6 @@ const toFix = (str: string) => {
   return +(+str).toFixed(2);
 };
 
-const getDate = (num: number) => {
-  let date = new Date(num);
-
-  return date.toLocaleDateString("en-US", {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    minute: "numeric",
-  });
-};
 
 const getData = (history: THistoryItem[]): { x: number; y: number }[] => {
   const res: { x: number; y: number }[] = [];
@@ -31,9 +20,11 @@ const getData = (history: THistoryItem[]): { x: number; y: number }[] => {
 
 interface Props {
   history: THistoryItem[];
+  format: string;
+  ticksCount: number
 }
 
-const Chart = ({history}: Props): ReactElement => {
+const Chart = ({history, format, ticksCount}: Props): ReactElement => {
   const series = [
     {
       name: "Price",
@@ -45,7 +36,6 @@ const Chart = ({history}: Props): ReactElement => {
     chart: {
       type: "area",
       stacked: false,
-      height: 350,
       zoom: {
         type: "x",
         enabled: true,
@@ -78,6 +68,16 @@ const Chart = ({history}: Props): ReactElement => {
     tooltip: {
       shared: false,
     },
+
+    xaxis: {
+      type: 'datetime',
+      tickAmount: ticksCount,
+      labels: {
+        formatter: function (value, _, opts) {
+              return opts.dateFormatter(new Date(+value), format)
+          }
+      }
+  },
   };
 
   return <ReactApexChart options={options} series={series} type="area" height={'100%'} />;

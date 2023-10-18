@@ -9,6 +9,7 @@ import CoinContent from "./CoinContent";
 import Loader from "components/Loader";
 import NotFound from "pages/NotFound";
 
+//ДОБАВИТЬ КОНТЕКСТ
 const CoinLayout = (): ReactElement => {
   const params = useParams();
 

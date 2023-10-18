@@ -11,7 +11,6 @@ interface Props
 }
 
 const Button = ({ text, isActive, ...rest }: Props): ReactElement => {
-  console.log(rest.className);
   return (
     <button className={`${styles.container} ${isActive && styles.active}`} {...rest}>
       {text}
