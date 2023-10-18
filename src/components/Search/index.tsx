@@ -1,6 +1,6 @@
 import React, { ReactElement, useRef } from "react";
 import styles from "./search.module.scss";
-import useOnClickOutside from 'utils/hooks/useClickOutside'
+import useClickOutside from "utils/hooks/useClickOutside";
 
 interface Props {
   value: string;
@@ -20,7 +20,9 @@ const Seacrh = ({
   };
 
   const onClick = () => {
-    setActive((val) => !val);
+    setTimeout(() => {
+      setActive((val) => !val);
+    }, 300);
   };
 
   const onClickTrue = () => {
@@ -28,7 +30,7 @@ const Seacrh = ({
   };
 
   const listref = useRef(null);
-  useOnClickOutside(listref, onClick, active);
+  useClickOutside(listref, onClick, active);
 
   return (
     <input

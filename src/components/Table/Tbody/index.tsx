@@ -18,9 +18,7 @@ const getTableRows = (coins: TCoin[]) => {
 const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
   if (coins.length === 0)
     return (
-      <section className={styles.notFound}>
-        We didn't find anything 😞
-      </section>
+      <section className={styles.notFound}>We didn't find anything 😞</section>
     );
 
   return (
@@ -31,6 +29,7 @@ const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
             {getTableRows(searchItems || [])}
           </div>
         )}
+
         {getTableRows(coins)}
       </section>
     </>
