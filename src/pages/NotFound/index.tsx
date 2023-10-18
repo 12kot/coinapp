@@ -6,7 +6,7 @@ const NotFound = (): ReactElement => {
   return (
     <main className={styles.container}>
       <section className={styles.text}>
-        <p className={styles.notFound}>We didn't find anything 😞</p>
+        <p className={styles.notFound}>We were told there was nothing here 😞</p>
         <p>But you can always go back to the tablet or look at Ethereum</p>
       </section>
       <section className={styles.buttons}>
