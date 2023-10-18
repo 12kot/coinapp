@@ -22,13 +22,16 @@ const getPages = (
 
     return (
       <Button
-        className={`${styles.page} ${activePage + 1 === pageNum && styles.active
-          }`}
+        style={{
+          width: "35px",
+          minWidth: "35px",
+        }}
+        
         onClick={() => handleClick(pageNum - 1)}
-        text={pageNum+''}
+        text={pageNum + ""}
+        isActive={!!(activePage + 1 === pageNum)}
         key={i}
-      >
-      </Button>
+      />
     );
   });
 };

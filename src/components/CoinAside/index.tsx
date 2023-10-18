@@ -15,7 +15,7 @@ const CoinAside = ({ coin }: Props) => {
       <CoinAsideMain name={coin.name} symbol={coin.symbol} />
       <CoinAsideSecond coin={coin} />
       <section className={styles.add}>
-        <Button text={"BUY"} />
+        <Button text={"BUY"} isActive={true} />
       </section>
     </aside>
   );

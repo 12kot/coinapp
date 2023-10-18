@@ -20,7 +20,7 @@ const CoinContent = ({ id }: Props): ReactElement => {
   if (!history) return <>ОЙ</>;
   return (
     <section className={styles.content}>
-      <ChartButtons setTime={setTime} />
+      <ChartButtons timeName={time.name} setTime={setTime} />
 
       <div className={styles.chart}>
         <Chart history={history.data} />

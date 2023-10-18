@@ -29,19 +29,21 @@ const times: THistoryRequest[] = [
 ];
 
 interface Props {
+  timeName: string; 
   setTime: React.Dispatch<React.SetStateAction<THistoryRequest>>;
 }
 
-const ChartButtons = ({ setTime }: Props): ReactElement => {
+const ChartButtons = ({ timeName, setTime }: Props): ReactElement => {
   const getTimes = () => {
     const handleTime = (value: THistoryRequest) => {
       setTime(value);
     };
 
-    return times.map((time) => (
+    return times.map((item) => (
       <Button
-        onClick={() => handleTime(time)}
-        text={time.name}
+        onClick={() => handleTime(item)}
+        text={item.name}
+        isActive={!!(item.name === timeName)}
       />
     ));
   };

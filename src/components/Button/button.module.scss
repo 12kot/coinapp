@@ -1,19 +1,26 @@
 .container {
   height: 100%;
   width: 100%;
-  background-color: var(--blue);
   border-radius: var(--border-radius);
 
   transition: var(--transition);
-
-  color: var(--negative-color);
   font-weight: bold;
 
   &:hover {
-    opacity: 0.9;
+    background-color: var(--focus-color);
   }
 
   &:active {
     scale: 0.98;
+  }
+}
+
+.active {
+  background-color: var(--blue);
+  color: var(--negative-color);
+  
+  &:hover {
+    opacity: 0.85;
+    background-color: var(--blue);
   }
 }
