@@ -24,35 +24,31 @@ const Thead = ({ sortConfig, requestSort }: Props): ReactElement => {
   const inView = useInView(ref);
 
   return (
-    <thead
+    <section
       className={`${styles.container} ${inView && styles.active}`}
       id="thead"
       ref={ref}
     >
-      <tr className={styles.item}>
-        <th>
-          <p></p>
-        </th>
-        <th>
-          <p>#</p>
-        </th>
-        <th>
-          <p>Name</p>
-        </th>
-        <th>
+      <div className={styles.item}>
+        <span className={styles.rowItem}></span>
+        <span className={styles.rowItem}>#</span>
+        <span className={styles.rowItem}>Name</span>
+        <div className={styles.rowItem}>
           {getArrow(sortConfig, "priceUsd")}
           <button onClick={() => requestSort("priceUsd")}>Price</button>
-        </th>
-        <th>
+        </div>
+        <div className={styles.rowItem}>
           {getArrow(sortConfig, "volumeUsd24Hr")}
           <button onClick={() => requestSort("volumeUsd24Hr")}>Volume</button>
-        </th>
-        <th>
+        </div>
+        <div className={styles.rowItem}>
           {getArrow(sortConfig, "changePercent24Hr")}
-          <button onClick={() => requestSort("changePercent24Hr")}>24h %</button>
-        </th>
-      </tr>
-    </thead>
+          <button onClick={() => requestSort("changePercent24Hr")}>
+            24h %
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 

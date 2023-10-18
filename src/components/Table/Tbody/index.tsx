@@ -18,21 +18,21 @@ const getTableRows = (coins: TCoin[]) => {
 const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
   if (coins.length === 0)
     return (
-      <tbody className={styles.notFound}>
+      <section className={styles.notFound}>
         ТУТ ПУСТО КУДА ПАЛИШ?
-      </tbody>
+      </section>
     );
 
   return (
     <>
-      <tbody className={styles.container}>
+      <section className={styles.container}>
         {activeSearch && !!searchItems?.length && (
           <div className={styles.absolute}>
             {getTableRows(searchItems || [])}
           </div>
         )}
         {getTableRows(coins)}
-      </tbody>
+      </section>
     </>
   );
 };

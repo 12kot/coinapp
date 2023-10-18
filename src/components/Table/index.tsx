@@ -23,10 +23,10 @@ const Table = ({ activePage, searchItems, activeSearch }: Props): ReactElement =
   if (isLoading) return <>LOADING</>;
 
   return (
-    <table className={styles.table}>
+    <section className={styles.table}>
       <Thead requestSort={requestSort} sortConfig={sortConfig} />
       <Tbody coins={items} searchItems={searchItems} activeSearch={activeSearch} />
-    </table>
+    </section>
   );
 };
 

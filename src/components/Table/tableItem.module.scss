@@ -1,3 +1,10 @@
+.overflow {
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}
+
 .item {
   display: grid;
   grid-template-columns:
@@ -10,37 +17,37 @@
   grid-column-gap: var(--gap);
 
   overflow-y: scroll;
+  @extend .overflow;
+
   border-top: 1px solid var(--border-color);
   background-color: var(--bg-color);
-  
-  td,
-  th {
+  height: var(--table-item-height);
+
+  .rowItem {
     cursor: pointer;
     gap: calc(var(--gap) / 2);
-    
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
     white-space: nowrap;
-    height: var(--table-item-height);
+    height: 100%;
 
     overflow: scroll;
+    @extend .overflow;
+  }
+
+  .rowItem:nth-child(1),
+  .rowItem:nth-child(2) {
+    justify-content: center;
+  }
+
+  .rowItem:nth-child(3) {
+    justify-content: start;
   }
 
   transition: var(--transition);
   &:hover {
     background-color: var(--focus-color);
-  }
-
-  td:nth-child(1),
-  td:nth-child(2),
-  th:nth-child(1),
-  th:nth-child(2) {
-    justify-content: center;
-  }
-
-  td:nth-child(3),
-  th:nth-child(3) {
-    justify-content: start;
   }
 }
