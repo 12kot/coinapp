@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./pagination.module.scss";
 import scrollToElement from "utils/services/scroll";
+import Button from "components/Button";
 
 const getPages = (
   activePage: number,
@@ -20,15 +21,14 @@ const getPages = (
     const pageNum = activePage + i - step + 1;
 
     return (
-      <button
-        className={`${styles.page} ${
-          activePage + 1 === pageNum && styles.active
-        }`}
+      <Button
+        className={`${styles.page} ${activePage + 1 === pageNum && styles.active
+          }`}
         onClick={() => handleClick(pageNum - 1)}
+        text={pageNum+''}
         key={i}
       >
-        {pageNum}
-      </button>
+      </Button>
     );
   });
 };

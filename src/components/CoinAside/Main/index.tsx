@@ -11,7 +11,7 @@ const CoinAsideMain = ({ name, symbol }: Props): ReactElement => {
     <section className={styles.container}>
       <img
         className={styles.logo}
-        src="https://assets.coincap.io/assets/icons/btc@2x.png"
+        src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`}
         alt=""
       ></img>
       <div className={styles.info}>

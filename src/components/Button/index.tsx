@@ -1,12 +1,12 @@
 import React, { ReactElement } from "react";
 import styles from "./button.module.scss";
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   text: string;
 }
 
-const Button = ({ text }: Props): ReactElement => {
-  return <button className={styles.container}>{text}</button>;
+const Button = ({ text, ...rest }: Props): ReactElement => {
+  return <button className={styles.container} {...rest}>{text}</button>;
 };
 
 export default Button;
