@@ -29,8 +29,11 @@ const CoinContent = ({ id }: Props): ReactElement => {
   if (!history)
     return (
       <div className={styles.loader}>
-        <p>Произошла какая-то ошибка 😞</p>
-        <p>Мы уже получили код ошибки. Скоро всё заработает!</p>
+        <p>Some mistake has occurred 😞</p>
+        <p>
+          We have sent the error code to the developers. Everything will work
+          soon
+        </p>
       </div>
     );
 

@@ -56,11 +56,12 @@ const Chart = ({history, format, ticksCount}: Props): ReactElement => {
       align: "left",
     },
     fill: {
+      colors: ['#3861fb'],
       type: "gradient",
       gradient: {
         shadeIntensity: 1,
         inverseColors: false,
-        opacityFrom: 0.5,
+        opacityFrom: 0.8,
         opacityTo: 0,
         stops: [0, 90, 100],
       },

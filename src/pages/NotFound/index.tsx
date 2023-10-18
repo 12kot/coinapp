@@ -6,10 +6,8 @@ const NotFound = (): ReactElement => {
   return (
     <main className={styles.container}>
       <section className={styles.text}>
-        <p className={styles.notFound}>Мы ничего не нашли 😞</p>
-        <p>
-          Но вы всегда можете вернуться к табличке или посмотреть на Ethereum
-        </p>
+        <p className={styles.notFound}>We didn't find anything 😞</p>
+        <p>But you can always go back to the tablet or look at Ethereum</p>
       </section>
       <section className={styles.buttons}>
         <NavLink className={styles.button} to="/">
