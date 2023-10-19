@@ -7,6 +7,7 @@ import { getCoinHistory } from "utils/constants/API";
 import ChartButtons from "./Buttons";
 import Loader from "components/Loader";
 import { THistoryItem, THistoryRequest } from "types/coin";
+import NotFound from "pages/NotFound";
 
 interface Props {
   id: string;
@@ -26,16 +27,7 @@ const CoinContent = ({ id }: Props): ReactElement => {
       </div>
     );
 
-  if (!history)
-    return (
-      <div className={styles.loader}>
-        <p>Some mistake has occurred 😞</p>
-        <p>
-          We have sent the error code to the developers. Everything will work
-          soon
-        </p>
-      </div>
-    );
+  if (!history || history.data.length === 0) return <NotFound />;
 
   return (
     <section className={styles.content}>

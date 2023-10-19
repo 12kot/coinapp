@@ -3,6 +3,7 @@ import styles from "./tableRow.module.scss";
 import { TCoin } from "types/coin";
 import { NavLink } from "react-router-dom";
 import toFix from "utils/services/toFix";
+import { getCoinImage } from "utils/constants/API";
 
 interface Props {
   coin: TCoin;
@@ -16,7 +17,7 @@ const TableRow = ({ coin }: Props) => {
       <div className={styles.rowItem}>
         <img
           className={styles.img}
-          src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+          src={getCoinImage(coin.symbol)}
           alt={coin.symbol}
         ></img>
         {coin.name}

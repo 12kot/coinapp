@@ -20,7 +20,6 @@ const getTableRows = (coins: TCoin[]): ReactElement[] => {
 
 const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
   const items = filterRows(coins);
-  console.log(items);
   if (items.length === 0)
     return (
       <section className={styles.notFound}>We didn't find anything 😞</section>

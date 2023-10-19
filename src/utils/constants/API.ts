@@ -6,6 +6,8 @@ export const searchCoins = (value: string) =>
 
 export const getCoin = (id: string) => `https://api.coincap.io/v2/assets/${id}`;
 
+export const getCoinImage = (symbol: string) => `https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`;
+
 export const getCoinHistory = (
   coin: string,
   interval: string,

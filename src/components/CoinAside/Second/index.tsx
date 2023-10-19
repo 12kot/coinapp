@@ -19,7 +19,13 @@ const CoinAsideSecond = ({ coin }: Props) => {
       <div className={styles.item}>
         <p>Supply</p>
         <p>
-          <b>${toFix(coin.supply)}</b>
+          <b>{toFix(coin.supply)}</b>
+        </p>
+      </div>
+      <div className={styles.item}>
+        <p>Max supply</p>
+        <p>
+          <b>{toFix(coin.maxSupply)}</b>
         </p>
       </div>
       <div className={styles.item}>
