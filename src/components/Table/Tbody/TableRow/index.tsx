@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./tableRow.module.scss";
 import { TCoin } from "types/coin";
 import { NavLink } from "react-router-dom";
+import toFix from "utils/services/toFix";
 
 interface Props {
   coin: TCoin;
@@ -21,14 +22,14 @@ const TableRow = ({ coin }: Props) => {
         {coin.name}
         <p className={styles.symbol}>{coin.symbol}</p>
       </div>
-      <div className={styles.rowItem}>${(+coin.priceUsd).toFixed(2)}</div>
-      <div className={styles.rowItem}>{(+coin.volumeUsd24Hr).toFixed(2)}</div>
+      <div className={styles.rowItem}>${toFix(coin.priceUsd)}</div>
+      <div className={styles.rowItem}>{toFix(coin.volumeUsd24Hr)}</div>
       <div
         className={` ${styles.rowItem} ${
           +coin.changePercent24Hr > 0 ? styles.green : styles.red
         }`}
       >
-        {(+coin.changePercent24Hr).toFixed(2)}%
+        {toFix(coin.changePercent24Hr)}%
       </div>
     </NavLink>
   );

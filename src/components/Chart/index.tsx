@@ -2,11 +2,7 @@ import React, { ReactElement } from "react";
 import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { THistoryItem } from "types/coin";
-
-const toFix = (str: string) => {
-  return +(+str).toFixed(2);
-};
-
+import toFix from "utils/services/toFix";
 
 const getData = (history: THistoryItem[]): { x: number; y: number }[] => {
   const res: { x: number; y: number }[] = [];

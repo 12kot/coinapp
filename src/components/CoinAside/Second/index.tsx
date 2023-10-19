@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./coinAsideSecond.module.scss";
 import { TCoin } from "types/coin";
-
-const toFix = (str: string) => {
-  if (str) return (+str).toFixed(2);
-};
+import toFix from "utils/services/toFix";
 
 interface Props {
   coin: TCoin;
