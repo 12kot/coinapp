@@ -8,11 +8,11 @@
 
   .logo {
     font-weight: bold;
-    padding: 0 var(--item-padding-left);
     letter-spacing: 2px;
   }
 
   .item {
+    padding: 0 var(--item-padding-left);
     cursor: pointer;
 
     display: flex;
@@ -23,5 +23,11 @@
     &:hover {
       background-color: var(--focus-color);
     }
+  }
+
+  .info {
+    display: flex;
+    gap: var(--gap);
+    height: 100%;
   }
 }

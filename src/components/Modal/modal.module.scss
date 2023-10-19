@@ -1,0 +1,44 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--focus-color);
+  z-index: -5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+  opacity: 0;
+
+  .modal {
+    padding: var(--item-padding-top) var(--item-padding-left);
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+
+    scale: 0.6;
+    transition: var(--transition);
+
+    .close {
+      position: absolute;
+      top: var(--item-padding-top);
+      right: var(--item-padding-left);
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  opacity: 1;
+  z-index: 5000;
+
+  .modal {
+    scale: 1;
+  }
+}

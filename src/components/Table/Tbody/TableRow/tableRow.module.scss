@@ -1,5 +1,10 @@
 @import "../../tableItem.module.scss";
 
+.cont {
+  display: flex;
+  width: 100%;
+}
+
 .item {
   .green {
     color: var(--green);
@@ -16,4 +21,8 @@
   .img {
     height: calc(var(--table-item-height) / 1.5);
   }
+}
+
+.button {
+  z-index: 3000;
 }

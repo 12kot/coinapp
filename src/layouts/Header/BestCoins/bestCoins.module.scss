@@ -20,10 +20,10 @@
       height: 100%;
       display: flex;
       align-items: center;
-      gap: var(--gap);
+      gap: calc(var(--gap) / 2);
 
       img {
-        max-height: calc(var(--header-height) / 1.4);
+        max-height: calc(var(--header-height) / 1.8);
       }
     }
   }
