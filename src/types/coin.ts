@@ -26,3 +26,9 @@ export interface THistoryRequest {
   format: string;
   ticksCount: number;
 }
+
+export interface TMyCoin {
+  coinId: string,
+  count: string,
+  pricePerOne: string,
+}

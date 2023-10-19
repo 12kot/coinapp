@@ -4,7 +4,7 @@ import toFix from "utils/services/toFix";
 
 interface Props {
   priceUsd: string;
-  supply: string;
+  supply: number;
 }
 
 const ModalCoinInfo = ({ priceUsd, supply }: Props): ReactElement => {
@@ -16,7 +16,7 @@ const ModalCoinInfo = ({ priceUsd, supply }: Props): ReactElement => {
       </div>
       <div className={styles.item}>
         <p>Max coins</p>
-        <b>{toFix(supply)}</b>
+        <b>{toFix(supply + '')}</b>
       </div>
     </section>
   );

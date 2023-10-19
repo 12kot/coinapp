@@ -5,30 +5,21 @@ import { NavLink } from "react-router-dom";
 import toFix from "utils/services/toFix";
 import { getCoinImage } from "utils/constants/API";
 import Button from "components/Button";
-import BuyCoinModal from "components/BuyCoin";
-import useToggle from "utils/hooks/useToggle";
 
 interface Props {
   coin: TCoin;
+  handleBuy: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, coin: TCoin) => void
 }
 
-const TableRow = ({ coin }: Props) => {
-  const { value, toggle } = useToggle(false);
-
-  const handleBuy = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    toggle();
-  };
-
+const TableRow = ({ coin, handleBuy }: Props) => {
   return (
     <>
-      <BuyCoinModal coin={coin} isActive={value} setIsActive={toggle} />
       <NavLink to={`/coin/${coin.id}`} className={styles.item}>
         <span className={`${styles.rowItem}`}>
           <Button
             style={{ height: "60%", width: "90%" }}
             text={"+"}
-            onClick={handleBuy}
+            onClick={(e) => handleBuy(e, coin)}
             isActive={true}
           />
         </span>

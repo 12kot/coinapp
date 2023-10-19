@@ -4,32 +4,19 @@ import React, { ReactElement, useState } from "react";
 import styles from "./input.module.scss";
 
 interface Props {
-  supply: number;
+  handleConfirm: (value: number) => void;
+  error: string;
 }
-const BuyInput = ({ supply }: Props): ReactElement => {
+
+const BuyInput = ({ handleConfirm, error }: Props): ReactElement => {
   const [value, setValue] = useState<string>("");
-  const [error, setError] = useState<string>();
 
   const handleBuy = () => {
-    if (!value) {
-      setError("Значение не может быть пустым");
-      return;
-    }
+    handleConfirm(+value);
 
-    if (+value > supply) {
-      setError("Слишком много монет, поменьше плиз");
-      return;
-    }
-
-    if (+value < 0) {
-      setError("Продавать моентки тут нельзя");
-      return;
-    }
-
-    setError("");
     setValue("");
-    alert("Вы успешно купили " + value)
   };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
