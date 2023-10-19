@@ -1,6 +1,6 @@
 import React, { ReactElement, useRef } from "react";
-import styles from "./search.module.scss";
 import useClickOutside from "utils/hooks/useClickOutside";
+import styles from "./input.module.scss";
 
 interface Props {
   value: string;
@@ -34,13 +34,13 @@ const Seacrh = ({
 
   return (
     <input
-      ref={listref}
       className={styles.container}
+      ref={listref}
       placeholder="Tether.."
       value={value}
       onClick={onClickTrue}
       onChange={(e) => handleChange(e)}
-    ></input>
+    />
   );
 };
 
