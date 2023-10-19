@@ -8,7 +8,7 @@ import ModalCoinInfo from "./CoinInfo";
 interface Props {
   coin: TCoin;
   isActive: boolean;
-  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsActive: () => void;
 }
 
 const BuyCoinModal = ({ coin, isActive, setIsActive }: Props) => {

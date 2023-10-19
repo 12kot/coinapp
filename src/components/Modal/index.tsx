@@ -4,22 +4,18 @@ import useClickOutside from "utils/hooks/useClickOutside";
 
 interface Props {
   isActive: boolean;
-  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsActive: () => void;
   children: ReactNode;
 }
 
 const Modal = ({ isActive, setIsActive, children }: Props): ReactElement => {
-  const handleOpen = () => {
-    setIsActive((val) => !val);
-  };
-
   const ref = useRef(null);
-  useClickOutside(ref, handleOpen, isActive);
+  useClickOutside(ref, setIsActive, isActive);
 
   return (
     <main className={`${styles.container} ${isActive && styles.active}`}>
       <section className={styles.modal} ref={ref}>
-        <div className={styles.close} onClick={handleOpen}>
+        <div className={styles.close} onClick={setIsActive}>
           ✖
         </div>
         {children}

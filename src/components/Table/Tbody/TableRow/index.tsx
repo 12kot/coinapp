@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./tableRow.module.scss";
 import { TCoin } from "types/coin";
 import { NavLink } from "react-router-dom";
@@ -6,23 +6,23 @@ import toFix from "utils/services/toFix";
 import { getCoinImage } from "utils/constants/API";
 import Button from "components/Button";
 import BuyCoinModal from "components/BuyCoin";
+import useToggle from "utils/hooks/useToggle";
 
 interface Props {
   coin: TCoin;
 }
 
 const TableRow = ({ coin }: Props) => {
-  const [openModal, setOpenModal] = useState<boolean>(false);
+  const { value, toggle } = useToggle(false);
 
   const handleBuy = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-
-    setOpenModal(val => !val)
+    toggle();
   };
 
   return (
     <>
-      <BuyCoinModal coin={coin} isActive={openModal} setIsActive={setOpenModal} />
+      <BuyCoinModal coin={coin} isActive={value} setIsActive={toggle} />
       <NavLink to={`/coin/${coin.id}`} className={styles.item}>
         <span className={`${styles.rowItem}`}>
           <Button
