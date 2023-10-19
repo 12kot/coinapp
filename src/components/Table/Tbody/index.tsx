@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import styles from "./tbody.module.scss";
 import TableRow from "./TableRow";
 import { TCoin } from "types/coin";
+import toFix from "utils/services/toFix";
 
 interface Props {
   coins: TCoin[];
@@ -9,14 +10,18 @@ interface Props {
   activeSearch?: boolean;
 }
 
-const getTableRows = (coins: TCoin[]) => {
-  return coins
-    .filter((coin) => +coin.priceUsd?.slice(0, 4) !== 0.0)
-    .map((coin, id) => <TableRow coin={coin} key={id} />);
+const filterRows = (coins: TCoin[]): TCoin[] => {
+  return coins.filter((coin) => toFix(coin.priceUsd) !== 0 && toFix(coin.volumeUsd24Hr) !== 0 && !!coin.name);
+};
+
+const getTableRows = (coins: TCoin[]): ReactElement[] => {
+  return coins.map((coin, id) => <TableRow coin={coin} key={id} />);
 };
 
 const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
-  if (coins.length === 0)
+  const items = filterRows(coins);
+  console.log(items);
+  if (items.length === 0)
     return (
       <section className={styles.notFound}>We didn't find anything 😞</section>
     );
@@ -25,12 +30,10 @@ const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
     <>
       <section className={styles.container}>
         {activeSearch && !!searchItems?.length && (
-          <div className={styles.absolute}>
-            {getTableRows(searchItems || [])}
-          </div>
+          <div className={styles.absolute}>{getTableRows(items)}</div>
         )}
 
-        {getTableRows(coins)}
+        {getTableRows(items)}
       </section>
     </>
   );
