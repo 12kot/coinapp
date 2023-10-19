@@ -29,7 +29,7 @@ const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
     <>
       <section className={styles.container}>
         {activeSearch && !!searchItems?.length && (
-          <div className={styles.absolute}>{getTableRows(items)}</div>
+          <div className={styles.absolute}>{getTableRows(searchItems)}</div>
         )}
 
         {getTableRows(items)}
