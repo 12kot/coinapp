@@ -16,7 +16,6 @@ const TableLayout = (): ReactElement => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activePage = getActivePage(searchParams.get("page"));
 
-  const [activeSearch, setActiveSearch] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
   const { data: searchItems } = useSearch<{data: TCoin[]}>(search);
 
@@ -27,10 +26,10 @@ const TableLayout = (): ReactElement => {
   return (
     <section className={styles.container}>
       <div className={styles.search}>
-        <Search value={search} setValue={setSearch} active={activeSearch} setActive={setActiveSearch} />
+        <Search value={search} setValue={setSearch} />
       </div>
 
-      <Table activePage={activePage} searchItems={searchItems?.data} activeSearch={activeSearch} />
+      <Table activePage={activePage} searchItems={searchItems?.data} />
       <Pagination handleClick={handlePage} activePage={activePage} />
     </section>
   );

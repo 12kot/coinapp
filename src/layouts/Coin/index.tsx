@@ -3,7 +3,7 @@ import styles from "./coinLayout.module.scss";
 import { getCoin } from "utils/constants/API";
 import useRequest from "utils/hooks/useRequest";
 import { TCoin } from "types/coin";
-import CoinAside from "components/CoinAside";
+import CoinAside from "layouts/Coin/CoinAside";
 import { useParams } from "react-router-dom";
 import CoinContent from "./CoinContent";
 import Loader from "components/Loader";

@@ -11,13 +11,11 @@ import Loader from "components/Loader";
 interface Props {
   activePage: number;
   searchItems?: TCoin[];
-  activeSearch?: boolean;
 }
 
 const Table = ({
   activePage,
   searchItems,
-  activeSearch,
 }: Props): ReactElement => {
   const { data: coins, isLoading } = useRequest<{ data: TCoin[] }>(
     getCoins(50, activePage)
@@ -38,7 +36,6 @@ const Table = ({
       <Tbody
         coins={items}
         searchItems={searchItems}
-        activeSearch={activeSearch}
       />
     </section>
   );

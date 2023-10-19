@@ -5,21 +5,16 @@
   }
 
   .absolute {
-    position: absolute;
-    top: 0;
-    width: 100%;
-
-    backdrop-filter: blur(1px);
-    background-color: var(--focus-color);
-    height: 100%;
-
-    a:nth-last-child(1) {
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-    }
-
-    a {
-      &:hover {
-        background-color: var(--bg-color);
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--item-padding-top) 0;
+      font-weight: bold;
+      font-size: var(--h2-size);
+      
+      &:nth-last-child(1) {
+        border-top: 1px solid var(--border-color);
       }
     }
   }

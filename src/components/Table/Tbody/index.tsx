@@ -9,7 +9,6 @@ import useToggle from "utils/hooks/useToggle";
 interface Props {
   coins: TCoin[];
   searchItems?: TCoin[];
-  activeSearch?: boolean;
 }
 
 const filterRows = (coins: TCoin[]): TCoin[] => {
@@ -33,11 +32,12 @@ const getTableRows = (
   ));
 };
 
-const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
+const Tbody = ({ coins, searchItems }: Props): ReactElement => {
   const [currentCoin, setCurrentCoin] = useState<TCoin>(coins[0]);
   const { value, toggle } = useToggle(false);
 
   const items = filterRows(coins);
+  const search = filterRows(searchItems || []);
   if (items.length === 0)
     return (
       <section className={styles.notFound}>We didn't find anything 😞</section>
@@ -56,9 +56,11 @@ const Tbody = ({ coins, searchItems, activeSearch }: Props): ReactElement => {
     <>
       <BuyCoinModal coin={currentCoin} isActive={value} setIsActive={toggle} />
       <section className={styles.container}>
-        {activeSearch && !!searchItems?.length && (
+        {!!search.length && (
           <div className={styles.absolute}>
-            {getTableRows(searchItems, handleBuy)}
+            <p className={styles.search}>Search results</p>
+            {getTableRows(search, handleBuy)}
+            <p className={styles.search}>Search end</p>
           </div>
         )}
 
