@@ -1,0 +1,28 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.coins {
+  width: 100%;
+  max-height: 400px;
+
+  gap: 0;
+  @extend .flex;
+
+  overflow-x: scroll;
+
+  .coin {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 25px;
+    grid-template-rows: 1fr;
+    grid-column-gap: var(--gap);
+    padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
+
+    p {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

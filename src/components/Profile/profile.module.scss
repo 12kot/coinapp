@@ -4,14 +4,6 @@
   gap: var(--gap);
 }
 
-.parent {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 25px;
-  grid-template-rows: 1fr;
-  grid-column-gap: var(--gap);
-  grid-row-gap: 0px;
-}
-
 .container {
   width: clamp(250px, 30%, 400px);
   width: 100%;
@@ -33,53 +25,6 @@
     justify-content: space-between;
     position: relative;
     @extend .flex;
-
-    .coins {
-      width: 100%;
-      max-height: 400px;
-
-      gap: 0;
-      @extend .flex;
-
-      overflow-x: scroll;
-
-      .coin {
-        height: 100%;
-        cursor: pointer;
-        padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
-
-        align-items: center;
-        @extend .parent;
-        transition: var(--transition);
-
-        p {
-          display: flex;
-          justify-content: flex-end;
-        }
-
-        img {
-          height: 25px;
-        }
-
-        button {
-          display: flex;
-          align-items: center;
-          
-          svg {
-            height: 20px;
-            transition: var(--transition);
-
-            &:hover {
-              fill: var(--red);
-            }
-          }
-        }
-
-        &:hover {
-          background-color: var(--focus-color);
-        }
-      }
-    }
 
     .totalPrice {
       padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
