@@ -45,7 +45,7 @@ export const getCoinsPrice = (
 
   const newPrice: number = getTotalCoinsPrice(oldCoins, newCoins);
 
-  return `$${toFix(newPrice)} ${newPrice - oldPrice > 0 && "+"}${toFix(
+  return `$${toFix(newPrice)} ${newPrice - oldPrice > 0 ? "+" : ""}${toFix(
     newPrice - oldPrice
   )} (${toFix((newPrice / oldPrice) * 100 - 100)}%)`;
 };

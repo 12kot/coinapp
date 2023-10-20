@@ -1,11 +1,12 @@
 import Modal from "components/Modal";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./buyCoin.module.scss";
-import { TCoin, TMyCoin } from "types/coin";
+import { TCoin } from "types/coin";
 import BuyInput from "./Input";
 import ModalCoinInfo from "./CoinInfo";
-import useLocalStorage from "utils/hooks/useLocaleStorage";
 import validatePurchase from "utils/services/validate";
+import { TMyCoinsContext } from "types/providers";
+import { MyCoinsContext } from "contexts/contexts";
 
 interface Props {
   coin: TCoin;
@@ -14,10 +15,7 @@ interface Props {
 }
 
 const BuyCoinModal = ({ coin, isActive, setIsActive }: Props) => {
-  const { value: coins, setValue: setCoins } = useLocalStorage<TMyCoin[]>(
-    [],
-    "coins"
-  );
+  const { coins, setCoins } = useContext(MyCoinsContext) as TMyCoinsContext;
   const [error, setError] = useState<string>("");
 
   const getCoinCount = (): number => {
@@ -34,8 +32,7 @@ const BuyCoinModal = ({ coin, isActive, setIsActive }: Props) => {
       return;
     }
 
-    alert(`Вы успешно купили: ${value} ${coin.symbol}`);
-
+    
     const currentCoin = coins.find((c) => c.coinId === coin.id);
     if (currentCoin) {
       currentCoin.count = +currentCoin.count + value + "";
@@ -58,6 +55,8 @@ const BuyCoinModal = ({ coin, isActive, setIsActive }: Props) => {
         pricePerOne: coin.priceUsd,
       },
     ]);
+    
+    alert(`Вы успешно купили: ${value} ${coin.symbol}`);
   };
 
   return (
