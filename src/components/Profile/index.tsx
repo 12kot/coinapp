@@ -19,7 +19,12 @@ const Profile = ({
   newCoins,
   active,
   toggle,
+  setCoins
 }: TProps): ReactElement => {
+  const handleDelete = (coinId: string) => {
+    setCoins((coins) => coins.filter((coin) => coin.coinId !== coinId));
+  };
+  
   return (
     <Modal isActive={active} setIsActive={toggle}>
       <div className={styles.container}>
@@ -27,7 +32,7 @@ const Profile = ({
           <b>Profile</b>
         </header>
         <main className={styles.content}>
-          <MyCoins oldCoins={oldCoins} newCoins={newCoins} />
+          <MyCoins oldCoins={oldCoins} newCoins={newCoins} handleDelete={handleDelete} />
           <p className={styles.totalPrice}>
             Total price:{" "}
             <b>{`$${toFix(getTotalCoinsPrice(oldCoins, newCoins))}`}</b>

@@ -19,7 +19,7 @@ const Header = (): ReactElement => {
   const { data: coinsInfo } = useRequest<{ data: TCoin[] }>(
     getCoinsByIds(getCoinsIds(coins))
   );
-  const { value, toggle } = useToggle(true);
+  const { value, toggle } = useToggle(false);
 
   return (
     <header className={styles.container}>

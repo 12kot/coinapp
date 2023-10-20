@@ -7,17 +7,18 @@ import toFix from "utils/services/toFix";
 import styles from "./myCoinItem.module.scss";
 
 interface Props {
-    coin: TMyCoin;
-    newCoins: TCoin[]
+  coin: TMyCoin;
+  newCoins: TCoin[];
+  handleDelete: (id: string) => void;
 }
 
-const MyCoinItem = ({ coin, newCoins }: Props): ReactElement => {
+const MyCoinItem = ({ coin, newCoins, handleDelete }: Props): ReactElement => {
   return (
     <div key={coin.coinId} className={styles.coin}>
       <img src={getCoinImage(coin.symbol)} alt={coin.coinId}></img>
       <p>{coin.count}</p>
       <p>${toFix(getCoinPrice(coin.coinId, +coin.count, newCoins))}</p>
-      <button>
+      <button onClick={() => handleDelete(coin.coinId)}>
         <TrashSVG />
       </button>
     </div>
