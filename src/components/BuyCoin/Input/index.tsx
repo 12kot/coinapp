@@ -21,6 +21,10 @@ const BuyInput = ({ handleConfirm, error }: Props): ReactElement => {
     setValue(e.target.value);
   };
 
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.code === "Enter") handleBuy();
+  };
+
   return (
     <label className={styles.input}>
       <p className={styles.label}></p>
@@ -32,6 +36,7 @@ const BuyInput = ({ handleConfirm, error }: Props): ReactElement => {
         onChange={(e) => handleChange(e)}
         placeholder="0.0012"
         type="number"
+        onKeyDown={handleEnter}
       />
       {!!error && <p className={styles.error}>{error}</p>}
       <Button
