@@ -12,7 +12,6 @@ const CoinAside = () => {
   return (
     <aside className={styles.aside}>
       <BuyCoinModal isActive={value} setIsActive={toggle} />
-
       <CoinAsideMain />
       <CoinAsideSecond />
       <section className={styles.add}>

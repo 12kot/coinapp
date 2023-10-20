@@ -17,6 +17,23 @@
   min-height: calc(100vh - var(--header-height));
 
   @extend .parent;
+
+  position: relative;
+
+  .back {
+    position: absolute;
+    top: var(--header-height);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+
+    svg {
+      display: flex;
+    }
+
+    &:hover {
+      background-color: var(--focus-color);
+    }
+  }
 }
 
 .loader {
