@@ -12,7 +12,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Main />}></Route>
+          <Route path="/" element={<Main />}></Route>
           <Route path="*" element={<NotFound />}></Route>
           <Route path="/coin/:id" element={<Coin />}></Route>
         </Route>
