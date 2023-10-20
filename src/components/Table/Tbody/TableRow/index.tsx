@@ -4,7 +4,7 @@ import { TCoin } from "types/coin";
 import { NavLink } from "react-router-dom";
 import toFix from "utils/services/toFix";
 import { getCoinImage } from "utils/constants/API";
-import Button from "components/Button";
+import Button from "components/Buttons/Button";
 
 interface Props {
   coin: TCoin;

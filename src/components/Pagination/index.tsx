@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./pagination.module.scss";
 import scrollToElement from "utils/services/scroll";
-import Button from "components/Button";
+import Button from "components/Buttons/Button";
 
 const getPages = (
   activePage: number,

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./chartButtons.module.scss";
 import { THistoryRequest } from "types/coin";
-import Button from "components/Button";
+import Button from "components/Buttons/Button";
 import {
   InitHistoryRequestDay,
   InitHistoryRequestMonth,

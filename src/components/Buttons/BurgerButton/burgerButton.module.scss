@@ -1,0 +1,73 @@
+.menuButton {
+  height: 100%;
+  width: 20px;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  #checkbox2 {
+    display: none;
+  }
+
+  .toggle2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition-duration: var(--transition);
+  }
+
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--font-color);
+    border-radius: 3px;
+  }
+
+  #bar5 {
+    transition-duration: var(--transition);
+  }
+
+  #bar4,
+  #bar6 {
+    width: 100%;
+  }
+
+  .active + .toggle2 .bars {
+    position: absolute;
+    transition-duration: var(--transition);
+  }
+
+  .active + .toggle2 #bar5 {
+    transform: scaleX(0);
+    transition-duration: var(--transition);
+  }
+
+  .active + .toggle2 #bar4 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: var(--transition);
+  }
+
+  .active + .toggle2 #bar6 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: var(--transition);
+  }
+
+  .active + .toggle2 {
+    transition-duration: var(--transition);
+    transform: rotate(180deg);
+  }
+}
