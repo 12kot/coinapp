@@ -8,8 +8,8 @@ import { useParams } from "react-router-dom";
 import CoinContent from "./CoinContent";
 import Loader from "components/Loader";
 import NotFound from "pages/NotFound";
+import { CoinContext } from "contexts/contexts";
 
-//ДОБАВИТЬ КОНТЕКСТ
 const CoinLayout = (): ReactElement => {
   const params = useParams();
 
@@ -23,13 +23,15 @@ const CoinLayout = (): ReactElement => {
         <Loader />
       </div>
     );
-  
+
   if (!coin) return <NotFound />;
 
   return (
     <main className={styles.container}>
-      <CoinAside coin={coin.data} />
-      <CoinContent id={coin.data.id} />
+      <CoinContext.Provider value={coin.data}>
+        <CoinAside />
+        <CoinContent id={coin.data.id} />
+      </CoinContext.Provider>
     </main>
   );
 };

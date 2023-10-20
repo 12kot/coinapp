@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styles from "./input.module.scss";
+import Input from "components/Input";
 
 interface Props {
   value: string;
@@ -12,8 +12,7 @@ const Seacrh = ({ value, setValue }: Props): ReactElement => {
   };
 
   return (
-    <input
-      className={styles.container}
+    <Input
       placeholder="Ethereum.."
       value={value}
       onChange={(e) => handleChange(e)}

@@ -10,12 +10,10 @@ import Loader from "components/Loader";
 
 interface Props {
   activePage: number;
-  searchItems?: TCoin[];
 }
 
 const Table = ({
   activePage,
-  searchItems,
 }: Props): ReactElement => {
   const { data: coins, isLoading } = useRequest<{ data: TCoin[] }>(
     getCoins(50, activePage)
@@ -35,7 +33,6 @@ const Table = ({
       <Thead requestSort={requestSort} sortConfig={sortConfig} />
       <Tbody
         coins={items}
-        searchItems={searchItems}
       />
     </section>
   );

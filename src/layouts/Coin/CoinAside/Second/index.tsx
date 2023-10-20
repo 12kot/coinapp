@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./coinAsideSecond.module.scss";
 import { TCoin } from "types/coin";
 import toFix from "utils/services/toFix";
+import { CoinContext } from "contexts/contexts";
 
-interface Props {
-  coin: TCoin;
-}
+const CoinAsideSecond = () => {
+  const coin = useContext(CoinContext) as TCoin;
 
-const CoinAsideSecond = ({ coin }: Props) => {
   return (
     <section className={styles.container}>
       <div className={styles.item}>

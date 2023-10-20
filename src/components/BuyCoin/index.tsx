@@ -6,16 +6,17 @@ import BuyInput from "./Input";
 import ModalCoinInfo from "./CoinInfo";
 import validatePurchase from "utils/services/validate";
 import { TMyCoinsContext } from "types/providers";
-import { MyCoinsContext } from "contexts/contexts";
+import { CoinContext, MyCoinsContext } from "contexts/contexts";
 
 interface Props {
-  coin: TCoin;
   isActive: boolean;
   setIsActive: () => void;
 }
 
-const BuyCoinModal = ({ coin, isActive, setIsActive }: Props) => {
+const BuyCoinModal = ({ isActive, setIsActive }: Props) => {
   const { coins, setCoins } = useContext(MyCoinsContext) as TMyCoinsContext;
+  const coin = useContext(CoinContext) as TCoin;
+  
   const [error, setError] = useState<string>("");
 
   const getCoinCount = (): number => {

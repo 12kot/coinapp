@@ -1,14 +1,14 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useContext, useState } from "react";
 import styles from "./tbody.module.scss";
 import TableRow from "./TableRow";
 import { TCoin } from "types/coin";
 import toFix from "utils/services/toFix";
 import BuyCoinModal from "components/BuyCoin";
 import useToggle from "utils/hooks/useToggle";
+import { SearchItemsContext } from "contexts/contexts";
 
 interface Props {
   coins: TCoin[];
-  searchItems?: TCoin[];
 }
 
 const filterRows = (coins: TCoin[]): TCoin[] => {
@@ -32,7 +32,9 @@ const getTableRows = (
   ));
 };
 
-const Tbody = ({ coins, searchItems }: Props): ReactElement => {
+const Tbody = ({ coins }: Props): ReactElement => {
+  const searchItems = useContext(SearchItemsContext) as TCoin[];
+  
   const [currentCoin, setCurrentCoin] = useState<TCoin>(coins[0]);
   const { value, toggle } = useToggle(false);
 
