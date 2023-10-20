@@ -28,6 +28,7 @@ export interface THistoryRequest {
 }
 
 export interface TMyCoin {
+  symbol: string,
   coinId: string,
   count: string,
   pricePerOne: string,

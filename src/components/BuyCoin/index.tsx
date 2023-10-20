@@ -54,6 +54,7 @@ const BuyCoinModal = ({ coin, isActive, setIsActive }: Props) => {
       {
         coinId: coin.id,
         count: value + "",
+        symbol: coin.symbol,
         pricePerOne: coin.priceUsd,
       },
     ]);
