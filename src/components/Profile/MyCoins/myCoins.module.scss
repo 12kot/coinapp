@@ -26,3 +26,14 @@
     }
   }
 }
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+
+  padding: var(--item-padding-top) calc(var(--item-padding-left) / 2) 0;
+  font-weight: bold;
+}

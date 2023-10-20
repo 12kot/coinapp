@@ -25,6 +25,8 @@ interface Props {
 }
 
 const MyCoins = ({ oldCoins, newCoins, handleDelete }: Props): ReactElement => {
+  if (oldCoins.length === 0) return <p className={styles.empty}>Your briefcase is empty. Buy a coin and come back</p>;
+
   return (
     <div className={styles.coins}>
       <div className={styles.coin}>
