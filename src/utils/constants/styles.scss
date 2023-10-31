@@ -40,6 +40,11 @@
   --h3-size: 16px;
   --h4-size: 15px;
 
+  --scrollbar-width: 4px;
+  --scrollbar-heigth: 4px;
+  --scrollbar-radius: 5px;
+  --scrollbar-color: var(--blue);
+
   @media screen and (max-width: 1023px) {
     --page-padding-left: 64px;
 
