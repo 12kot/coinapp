@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styles from "./coinAsideSecond.module.scss";
 import { TCoin } from "types/coin";
 import toFix from "utils/services/toFix";
-import { CoinContext } from "contexts/contexts";
+import { CoinContext } from "contexts/CoinContextProvider";
 
 const CoinAsideSecond = () => {
   const coin = useContext(CoinContext) as TCoin;

@@ -8,8 +8,8 @@ import { NavLink, useParams } from "react-router-dom";
 import CoinContent from "./CoinContent";
 import Loader from "components/Loader";
 import NotFound from "pages/NotFound";
-import { CoinContext } from "contexts/contexts";
 import ArrowBackSVG from "assets/svg/ArrowBackSVG";
+import CoinContextProvider from "contexts/CoinContextProvider";
 
 const CoinLayout = (): ReactElement => {
   const params = useParams();
@@ -33,10 +33,10 @@ const CoinLayout = (): ReactElement => {
         <ArrowBackSVG />
       </NavLink>
 
-      <CoinContext.Provider value={coin.data}>
+      <CoinContextProvider coin={coin.data}>
         <CoinAside />
         <CoinContent id={coin.data.id} />
-      </CoinContext.Provider>
+      </CoinContextProvider>
     </article>
   );
 };

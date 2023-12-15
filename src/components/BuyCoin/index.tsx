@@ -6,7 +6,8 @@ import BuyInput from "./Input";
 import ModalCoinInfo from "./CoinInfo";
 import validatePurchase from "utils/services/validate";
 import { TMyCoinsContext } from "types/providers";
-import { CoinContext, MyCoinsContext } from "contexts/contexts";
+import { MyCoinsContext } from "contexts/MyCoinsContextProvider";
+import { CoinContext } from "contexts/CoinContextProvider";
 
 interface Props {
   isActive: boolean;

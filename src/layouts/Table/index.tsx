@@ -6,7 +6,7 @@ import Search from "components/Search/index";
 import Pagination from "components/Pagination";
 import { TCoin } from "types/coin";
 import { useSearch } from "utils/hooks/useSearch";
-import { SearchItemsContext } from "contexts/contexts";
+import SearchItemsContextProvider from "contexts/SearchItemsContextProvider";
 
 const getActivePage = (params: string | null): number => {
   if (!params || !+params) return 0;
@@ -30,9 +30,9 @@ const TableLayout = (): ReactElement => {
         <Search value={search} setValue={setSearch} />
       </div>
 
-      <SearchItemsContext.Provider value={searchItems?.data || []}>
+      <SearchItemsContextProvider coins={searchItems?.data || []}>
         <Table activePage={activePage} />
-      </SearchItemsContext.Provider>
+      </SearchItemsContextProvider>
       
       <Pagination handleClick={handlePage} activePage={activePage} />
     </section>

@@ -10,9 +10,9 @@ import useRequest from "utils/hooks/useRequest";
 import { getCoinsByIds } from "utils/constants/API";
 import { getCoinsIds, getCoinsPrice } from "utils/services/profile.service";
 import { TMyCoinsContext } from "types/providers";
-import { MyCoinsContext } from "contexts/contexts";
 import BurgerMenu from "layouts/BurgerMenu";
 import BurgerButton from "components/Buttons/BurgerButton";
+import { MyCoinsContext } from "contexts/MyCoinsContextProvider";
 
 const Header = (): ReactElement => {
   const { coins } = useContext(MyCoinsContext) as TMyCoinsContext;

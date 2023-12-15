@@ -6,7 +6,7 @@ import toFix from "utils/services/toFix";
 import { getTotalCoinsPrice } from "utils/services/profile.service";
 import MyCoins from "./MyCoins";
 import { TMyCoinsContext } from "types/providers";
-import { MyCoinsContext } from "contexts/contexts";
+import { MyCoinsContext } from "contexts/MyCoinsContextProvider";
 
 interface TProps {
   newCoins: TCoin[];

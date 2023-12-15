@@ -1,8 +1,8 @@
 import React, { ReactElement, useContext } from "react";
 import styles from "./coinAsideMain.module.scss";
 import { getCoinImage } from "utils/constants/API";
-import { CoinContext } from "contexts/contexts";
 import { TCoin } from "types/coin";
+import { CoinContext } from "contexts/CoinContextProvider";
 
 const CoinAsideMain = (): ReactElement => {
   const { name, symbol } = useContext(CoinContext) as TCoin;

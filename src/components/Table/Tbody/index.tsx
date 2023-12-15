@@ -5,7 +5,8 @@ import { TCoin } from "types/coin";
 import toFix from "utils/services/toFix";
 import BuyCoinModal from "components/BuyCoin";
 import useToggle from "utils/hooks/useToggle";
-import { CoinContext, SearchItemsContext } from "contexts/contexts";
+import CoinContextProvider from "contexts/CoinContextProvider";
+import { SearchItemsContext } from "contexts/SearchItemsContextProvider";
 
 interface Props {
   coins: TCoin[];
@@ -56,9 +57,9 @@ const Tbody = ({ coins }: Props): ReactElement => {
 
   return (
     <>
-      <CoinContext.Provider value={currentCoin}>
+      <CoinContextProvider coin={currentCoin}>
         <BuyCoinModal isActive={value} setIsActive={toggle} />
-      </CoinContext.Provider>
+      </CoinContextProvider>
       <section className={styles.container}>
         {!!search.length && (
           <div className={styles.absolute}>

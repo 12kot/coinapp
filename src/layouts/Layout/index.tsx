@@ -6,7 +6,7 @@ import Footer from "layouts/Footer";
 import Loader from "components/Loader";
 import useLocalStorage from "utils/hooks/useLocaleStorage";
 import { TMyCoin } from "types/coin";
-import { MyCoinsContext } from "contexts/contexts";
+import MyCoinsContextProvider from "contexts/MyCoinsContextProvider";
 
 
 const Layout = (): ReactElement => {
@@ -17,9 +17,9 @@ const Layout = (): ReactElement => {
 
   return (
     <>
-      <MyCoinsContext.Provider value={{coins, setCoins}}>
+      <MyCoinsContextProvider coins={coins} setCoins={setCoins}>
         <Header />
-      </MyCoinsContext.Provider>
+      </MyCoinsContextProvider>
 
       <Suspense
         fallback={
@@ -29,9 +29,9 @@ const Layout = (): ReactElement => {
         }
       >
         <main className={styles.container}>
-          <MyCoinsContext.Provider value={{coins, setCoins}}>
+        <MyCoinsContextProvider coins={coins} setCoins={setCoins}>
             <Outlet />
-          </MyCoinsContext.Provider>
+          </MyCoinsContextProvider>
         </main>
       </Suspense>
 
