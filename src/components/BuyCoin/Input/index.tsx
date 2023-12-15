@@ -43,7 +43,7 @@ const BuyInput = ({ handleConfirm, error }: Props): ReactElement => {
         onClick={handleBuy}
         text={"BUY"}
         isActive={true}
-        style={{ height: "30px" }}
+        className={styles.custom__button}
       />
     </label>
   );

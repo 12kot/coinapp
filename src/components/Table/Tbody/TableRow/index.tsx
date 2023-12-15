@@ -17,7 +17,7 @@ const TableRow = ({ coin, handleBuy }: Props) => {
       <NavLink to={`/coin/${coin.id}`} className={styles.item}>
         <span className={`${styles.rowItem}`}>
           <Button
-            style={{ height: "60%", width: "80%" }}
+            className={styles.custom__button}
             text={"+"}
             onClick={(e) => handleBuy(e, coin)}
             isActive={true}

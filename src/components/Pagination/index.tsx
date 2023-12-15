@@ -22,11 +22,7 @@ const getPages = (
 
     return (
       <Button
-        style={{
-          width: "35px",
-          minWidth: "35px",
-        }}
-        
+        className={styles.custom__button}
         onClick={() => handleClick(pageNum - 1)}
         text={pageNum + ""}
         isActive={!!(activePage + 1 === pageNum)}

@@ -10,9 +10,9 @@ interface Props
   isActive: boolean;
 }
 
-const Button = ({ text, isActive, ...rest }: Props): ReactElement => {
+const Button = ({ text, isActive, className, ...rest }: Props): ReactElement => {
   return (
-    <button className={`${styles.container} ${isActive && styles.active}`} {...rest}>
+    <button className={`${styles.container} ${isActive && styles.active} ${className}`} {...rest}>
       {text}
     </button>
   );
