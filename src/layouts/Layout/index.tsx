@@ -1,13 +1,12 @@
 import React, { ReactElement, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import styles from "./layout.module.scss";
-import Header from "layouts/Header";
-import Footer from "layouts/Footer";
+import Footer from "components/Footer";
 import Loader from "components/Loader";
 import useLocalStorage from "utils/hooks/useLocaleStorage";
 import { TMyCoin } from "types/coin";
 import MyCoinsContextProvider from "contexts/MyCoinsContextProvider";
-
+import HeaderContainer from "containers/Header/HeaderContainer";
 
 const Layout = (): ReactElement => {
   const { value: coins, setValue: setCoins } = useLocalStorage<TMyCoin[]>(
@@ -18,7 +17,7 @@ const Layout = (): ReactElement => {
   return (
     <>
       <MyCoinsContextProvider coins={coins} setCoins={setCoins}>
-        <Header />
+        <HeaderContainer />
       </MyCoinsContextProvider>
 
       <Suspense
@@ -29,7 +28,7 @@ const Layout = (): ReactElement => {
         }
       >
         <main className={styles.container}>
-        <MyCoinsContextProvider coins={coins} setCoins={setCoins}>
+          <MyCoinsContextProvider coins={coins} setCoins={setCoins}>
             <Outlet />
           </MyCoinsContextProvider>
         </main>

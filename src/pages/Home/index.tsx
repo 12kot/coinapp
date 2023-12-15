@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./home.module.scss";
-import TableLayout from "layouts/Table";
+import TableContainer from "containers/Table/TableContainer";
 
 const Main = () => {
   return (
@@ -10,7 +10,7 @@ const Main = () => {
         <p>Millions choose us!</p>
       </header>
       <section className={styles.table}>
-        <TableLayout />
+        <TableContainer />
       </section>
     </article>
   );

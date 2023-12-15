@@ -1,15 +1,17 @@
+const COINS_URL = "https://api.coincap.io/v2/assets";
+const COINS_ASSETS = "https://assets.coincap.io/assets";
+
 export const getCoins = (count: number, page: number) =>
-  `https://api.coincap.io/v2/assets?limit=${count}&offset=${count * page}`;
+  `${COINS_URL}?limit=${count}&offset=${count * page}`;
 
-export const getCoinsByIds = (ids: string[]) =>
-  `https://api.coincap.io/v2/assets?ids=${ids}`;
+export const getCoinsByIds = (ids: string[]) => `${COINS_URL}?ids=${ids}`;
 
-export const searchCoins = (value: string) =>
-  `https://api.coincap.io/v2/assets?search=${value}`;
+export const searchCoins = (value: string) => `${COINS_URL}?search=${value}`;
 
-export const getCoin = (id: string) => `https://api.coincap.io/v2/assets/${id}`;
+export const getCoin = (id: string) => `${COINS_URL}/${id}`;
 
-export const getCoinImage = (symbol: string) => `https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`;
+export const getCoinImage = (symbol: string) =>
+  `${COINS_ASSETS}/icons/${symbol.toLowerCase()}@2x.png`;
 
 export const getCoinHistory = (
   coin: string,
@@ -17,4 +19,4 @@ export const getCoinHistory = (
   start: number,
   end: number
 ) =>
-  `https://api.coincap.io/v2/assets/${coin}/history?interval=${interval}&start=${start}&end=${end}`;
+  `${COINS_URL}/${coin}/history?interval=${interval}&start=${start}&end=${end}`;

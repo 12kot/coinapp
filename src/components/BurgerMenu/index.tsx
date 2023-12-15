@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./burgerMenu.module.scss";
-import BestCoins from "layouts/Header/BestCoins";
+import BestCoins from "components/Header/BestCoins";
 
 interface Props {
   isActive: boolean;

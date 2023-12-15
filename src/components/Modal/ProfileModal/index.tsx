@@ -14,7 +14,7 @@ interface TProps {
   toggle: () => void;
 }
 
-const Profile = ({
+const ProfileModal = ({
   newCoins,
   active,
   toggle,
@@ -43,4 +43,4 @@ const Profile = ({
   );
 };
 
-export default Profile;
+export default ProfileModal;

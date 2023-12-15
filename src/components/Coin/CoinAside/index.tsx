@@ -3,8 +3,8 @@ import styles from "./coinAside.module.scss";
 import CoinAsideMain from "./Main";
 import CoinAsideSecond from "./Second";
 import Button from "components/Buttons/Button";
-import BuyCoinModal from "components/BuyCoin";
 import useToggle from "utils/hooks/useToggle";
+import BuyCoinModal from "components/Modal/BuyCoinModal";
 
 const CoinAside = () => {
   const { value, toggle } = useToggle(false);

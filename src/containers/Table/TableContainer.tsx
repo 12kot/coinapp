@@ -1,26 +1,24 @@
 import React, { ReactElement, useState } from "react";
-import styles from "./tableLayout.module.scss";
-import Table from "components/Table";
 import { useSearchParams } from "react-router-dom";
 import Search from "components/Search/index";
-import Pagination from "components/Pagination";
 import { TCoin } from "types/coin";
 import { useSearch } from "utils/hooks/useSearch";
-import SearchItemsContextProvider from "contexts/SearchItemsContextProvider";
+import styles from "./tableLayout.module.scss";
+import TableLayout from "layouts/Table/TableLayout";
 
 const getActivePage = (params: string | null): number => {
   if (!params || !+params) return 0;
   return +params;
 };
 
-const TableLayout = (): ReactElement => {
+const TableContainer = (): ReactElement => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activePage = getActivePage(searchParams.get("page"));
 
   const [search, setSearch] = useState<string>("");
   const { data: searchItems } = useSearch<{ data: TCoin[] }>(search);
 
-  const handlePage = (id: number) => {
+  const handlePageClick = (id: number) => {
     setSearchParams(`page=${id}`);
   };
 
@@ -30,13 +28,13 @@ const TableLayout = (): ReactElement => {
         <Search value={search} setValue={setSearch} />
       </div>
 
-      <SearchItemsContextProvider coins={searchItems?.data || []}>
-        <Table activePage={activePage} />
-      </SearchItemsContextProvider>
-      
-      <Pagination handleClick={handlePage} activePage={activePage} />
+      <TableLayout
+        activePage={activePage}
+        handlePageClick={handlePageClick}
+        searchItems={searchItems?.data || []}
+      />
     </section>
   );
 };
 
-export default TableLayout;
+export default TableContainer;

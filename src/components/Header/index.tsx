@@ -1,33 +1,29 @@
-import React, { ReactElement, useContext } from "react";
+import React, { ReactElement } from "react";
 import styles from "./header.module.scss";
 import { NavLink } from "react-router-dom";
 import BestCoins from "./BestCoins";
 import UserSVG from "assets/svg/UserSVG";
-import Profile from "components/Profile";
-import { TCoin } from "types/coin";
+import { TCoin, TMyCoin } from "types/coin";
 import useToggle from "utils/hooks/useToggle";
-import useRequest from "utils/hooks/useRequest";
-import { getCoinsByIds } from "utils/constants/API";
-import { getCoinsIds, getCoinsPrice } from "utils/services/profile.service";
-import { TMyCoinsContext } from "types/providers";
-import BurgerMenu from "layouts/BurgerMenu";
+import { getCoinsPrice } from "utils/services/profile.service";
+import BurgerMenu from "components/BurgerMenu";
 import BurgerButton from "components/Buttons/BurgerButton";
-import { MyCoinsContext } from "contexts/MyCoinsContextProvider";
+import ProfileModal from "components/Modal/ProfileModal";
 
-const Header = (): ReactElement => {
-  const { coins } = useContext(MyCoinsContext) as TMyCoinsContext;
+interface Props {
+  myCoins: TMyCoin[];
+  coins: TCoin[];
+}
 
-  const { data: coinsInfo } = useRequest<{ data: TCoin[] }>(
-    getCoinsByIds(getCoinsIds(coins))
-  );
+const Header = ({ myCoins, coins }: Props): ReactElement => {
   const { value: profileActive, toggle: setProfileActive } = useToggle(false);
   const { value: burgerMenu, toggle: setBurgerMenu } = useToggle(false);
 
   return (
     <>
       <BurgerMenu isActive={burgerMenu} toggle={setBurgerMenu} />
-      <Profile
-        newCoins={coinsInfo?.data || []}
+      <ProfileModal
+        newCoins={coins}
         active={profileActive}
         toggle={setProfileActive}
       />
@@ -41,9 +37,9 @@ const Header = (): ReactElement => {
           </div>
           <button className={styles.item} onClick={setProfileActive}>
             <UserSVG />
-            {coinsInfo &&
-              coins.length !== 0 &&
-              getCoinsPrice(coins, coinsInfo.data)}
+            {!!coins.length &&
+              !!myCoins.length &&
+              getCoinsPrice(myCoins, coins)}
           </button>
           <div className={`${styles.item} ${styles.burger}`}>
             <BurgerButton isActive={burgerMenu} toggle={setBurgerMenu} />

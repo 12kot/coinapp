@@ -3,10 +3,10 @@ import styles from "./tbody.module.scss";
 import TableRow from "./TableRow";
 import { TCoin } from "types/coin";
 import toFix from "utils/services/toFix";
-import BuyCoinModal from "components/BuyCoin";
 import useToggle from "utils/hooks/useToggle";
 import CoinContextProvider from "contexts/CoinContextProvider";
 import { SearchItemsContext } from "contexts/SearchItemsContextProvider";
+import BuyCoinModal from "components/Modal/BuyCoinModal";
 
 interface Props {
   coins: TCoin[];

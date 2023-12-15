@@ -12,9 +12,7 @@ interface Props {
   activePage: number;
 }
 
-const Table = ({
-  activePage,
-}: Props): ReactElement => {
+const Table = ({ activePage }: Props): ReactElement => {
   const { data: coins, isLoading } = useRequest<{ data: TCoin[] }>(
     getCoins(50, activePage)
   );
@@ -31,9 +29,7 @@ const Table = ({
   return (
     <section className={styles.table}>
       <Thead requestSort={requestSort} sortConfig={sortConfig} />
-      <Tbody
-        coins={items}
-      />
+      <Tbody coins={items} />
     </section>
   );
 };
