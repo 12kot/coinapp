@@ -6,68 +6,68 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  &:hover {
-    background-color: transparent;
-  }
+.menuButton .active + .toggle2 .bars {
+  position: absolute;
+  transition-duration: var(--transition);
+}
 
-  #checkbox2 {
-    display: none;
-  }
+.menuButton .active + .toggle2 #bar5 {
+  transform: scaleX(0);
+  transition-duration: var(--transition);
+}
 
-  .toggle2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    transition-duration: var(--transition);
-  }
+.menuButton .active + .toggle2 #bar4 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: var(--transition);
+}
 
-  .bars {
-    width: 100%;
-    height: 4px;
-    background-color: var(--font-color);
-    border-radius: 3px;
-  }
+.menuButton .active + .toggle2 #bar6 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: var(--transition);
+}
 
-  #bar5 {
-    transition-duration: var(--transition);
-  }
+.menuButton .active + .toggle2 {
+  transition-duration: var(--transition);
+  transform: rotate(180deg);
+}
 
-  #bar4,
-  #bar6 {
-    width: 100%;
-  }
+.menuButton .toggle2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition-duration: var(--transition);
+}
 
-  .active + .toggle2 .bars {
-    position: absolute;
-    transition-duration: var(--transition);
-  }
+.menuButton .bars {
+  width: 100%;
+  height: 4px;
+  background-color: var(--font-color);
+  border-radius: 3px;
+}
 
-  .active + .toggle2 #bar5 {
-    transform: scaleX(0);
-    transition-duration: var(--transition);
-  }
+.menuButton #bar4,
+.menuButton #bar6 {
+  width: 100%;
+}
 
-  .active + .toggle2 #bar4 {
-    width: 100%;
-    transform: rotate(45deg);
-    transition-duration: var(--transition);
-  }
+.menuButton #bar5 {
+  transition-duration: var(--transition);
+}
 
-  .active + .toggle2 #bar6 {
-    width: 100%;
-    transform: rotate(-45deg);
-    transition-duration: var(--transition);
-  }
+.menuButton #checkbox2 {
+  display: none;
+}
 
-  .active + .toggle2 {
-    transition-duration: var(--transition);
-    transform: rotate(180deg);
-  }
+.menuButton:hover {
+  background-color: transparent;
 }

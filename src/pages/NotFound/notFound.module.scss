@@ -8,29 +8,29 @@
   gap: var(--gap);
 
   text-align: center;
+}
 
-  .text {
-    .notFound {
-      font-weight: bold;
-      font-size: var(--h2-size);
-    }
+.container .text {
+  font-size: var(--h3-size);
+}
 
-    font-size: var(--h3-size);
-  }
+.container .text .notFound {
+  font-weight: bold;
+  font-size: var(--h2-size);
+}
 
-  .buttons {
-    display: flex;
-    gap: var(--gap);
+.container .buttons {
+  display: flex;
+  gap: var(--gap);
+}
 
-    .button {
-      border-radius: var(--border-radius);
-      border: 2px solid var(--border-color);
-      transition: var(--transition);
-      padding: var(--item-padding-top) var(--item-padding-left);
+.container .buttons .button {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  transition: var(--transition);
+  padding: var(--item-padding-top) var(--item-padding-left);
+}
 
-      &:hover {
-        background-color: var(--focus-color);
-      }
-    }
-  }
+.container .buttons .button:hover {
+  background-color: var(--focus-color);
 }

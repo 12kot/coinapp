@@ -6,21 +6,22 @@
   transition: var(--transition);
   font-weight: bold;
 
-  &:hover {
-    background-color: var(--focus-color);
-  }
+}
+.container:hover {
+  background-color: var(--focus-color);
+}
 
-  &:active {
-    scale: 0.98;
-  }
+.container:active {
+  scale: 0.98;
 }
 
 .active {
   background-color: var(--blue);
   color: var(--negative-color);
   
-  &:hover {
-    opacity: 0.85;
-    background-color: var(--blue);
-  }
+}
+
+.active:hover {
+  opacity: 0.85;
+  background-color: var(--blue);
 }

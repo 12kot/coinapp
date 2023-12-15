@@ -1,39 +1,39 @@
 @import "../tableItem.module.scss";
 
 .active {
-  .item {
-    position: fixed;
-    top: 0;
-    width: fit-content;
-    width: calc(100% - var(--page-padding-left) * 2);
-  }
-
   width: 100%;
   position: relative;
+}
+
+.active .item {
+  position: fixed;
+  top: 0;
+  width: fit-content;
+  width: calc(100% - var(--page-padding-left) * 2);
 }
 
 .container {
   z-index: 4000;
   align-items: center;
-  
-  .item {
-    border-bottom: 1px solid var(--border-color);
+}
 
-    .rowItem {
-      button {
-        height: 100%;
-        font-weight: bold;
-      }
+.container .item {
+  border-bottom: 1px solid var(--border-color);
+}
 
-      font-weight: bold;
-      
-      svg {
-        height: 16px;
-      }
-    }
+.container .item .rowItem {
+  font-weight: bold;
+}
 
-    &:hover {
-      background-color: var(--bg-color);
-    }
-  }
+.container .item .rowItem button {
+  height: 100%;
+  font-weight: bold;
+}
+
+.container .item .rowItem svg {
+  height: 16px;
+}
+
+.container .item:hover {
+  background-color: var(--bg-color);
 }

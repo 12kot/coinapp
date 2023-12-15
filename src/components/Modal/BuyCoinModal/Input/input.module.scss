@@ -6,15 +6,14 @@
 
 .input {
   height: 40%;
-
   @extend .flex;
+}
 
-  .error {
-    color: var(--red);
-    font-size: calc(var(--font-size) - 2px);
-  }
+.input .error {
+  color: var(--red);
+  font-size: calc(var(--font-size) - 2px);
 }
 
 .custom__button {
-  height: 30px!important;
+  height: 30px !important;
 }

@@ -6,16 +6,17 @@ import UserSVG from "assets/svg/UserSVG";
 import { TCoin, TMyCoin } from "types/coin";
 import useToggle from "utils/hooks/useToggle";
 import { getCoinsPrice } from "utils/services/profile.service";
-import BurgerMenu from "components/BurgerMenu";
+import BurgerMenu from "containers/BurgerMenu";
 import BurgerButton from "components/Buttons/BurgerButton";
 import ProfileModal from "components/Modal/ProfileModal";
 
 interface Props {
   myCoins: TMyCoin[];
   coins: TCoin[];
+  bestCoins: TCoin[];
 }
 
-const Header = ({ myCoins, coins }: Props): ReactElement => {
+const Header = ({ myCoins, coins, bestCoins }: Props): ReactElement => {
   const { value: profileActive, toggle: setProfileActive } = useToggle(false);
   const { value: burgerMenu, toggle: setBurgerMenu } = useToggle(false);
 
@@ -33,7 +34,7 @@ const Header = ({ myCoins, coins }: Props): ReactElement => {
         </NavLink>
         <div className={styles.info}>
           <div className={styles.best}>
-            <BestCoins />
+            <BestCoins coins={bestCoins} />
           </div>
           <button className={styles.item} onClick={setProfileActive}>
             <UserSVG />
@@ -41,9 +42,9 @@ const Header = ({ myCoins, coins }: Props): ReactElement => {
               !!myCoins.length &&
               getCoinsPrice(myCoins, coins)}
           </button>
-          <div className={`${styles.item} ${styles.burger}`}>
+          <button className={`${styles.item} ${styles.burger}`} onClick={setBurgerMenu}>
             <BurgerButton isActive={burgerMenu} toggle={setBurgerMenu} />
-          </div>
+          </button>
         </div>
       </header>
     </>

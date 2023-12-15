@@ -6,20 +6,20 @@
   flex-direction: column;
   align-items: center;
   gap: var(--gap);
+}
 
-  .logo {
-    height: 120px;
-    max-height: 120px;
-  }
+.container .logo {
+  height: 120px;
+  max-height: 120px;
+}
 
-  .info {
-    display: flex;
-    align-items: flex-end;
-    gap: var(--gap);
+.container .info {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap);
+}
 
-    .symbol {
-      font-size: var(--h1-size);
-      color: var(--second-font-color);
-    }
-  }
+.container .info .symbol {
+  font-size: var(--h1-size);
+  color: var(--second-font-color);
 }

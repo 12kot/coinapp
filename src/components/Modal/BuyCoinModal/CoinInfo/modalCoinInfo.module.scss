@@ -6,10 +6,10 @@
 
 .info {
   @extend .flex;
+}
 
-  .item {
-    @extend .flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.info .item {
+  @extend .flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

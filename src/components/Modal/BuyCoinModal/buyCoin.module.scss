@@ -9,15 +9,15 @@
   height: fit-content;
   justify-content: space-between;
   @extend .flex;
+}
 
-  .header {
-    font-size: var(--h2-size);
-    height: 20%;
-  }
+.container .header {
+  font-size: var(--h2-size);
+  height: 20%;
+}
 
-  .content {
-    @extend .flex;
-    justify-content: space-between;
-    height: 80%;
-  }
+.container .content {
+  @extend .flex;
+  justify-content: space-between;
+  height: 80%;
 }

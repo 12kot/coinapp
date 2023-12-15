@@ -11,7 +11,7 @@
   --bg-color: #fefefe;
   --second-bg-color: #f5f7fa;
   --negative-color: #fefefe;
-  
+
   --font-color: #111210;
   --second-font-color: #808ebd;
 
@@ -40,12 +40,14 @@
   --h3-size: 16px;
   --h4-size: 15px;
 
-  --scrollbar-width: 4px;
-  --scrollbar-heigth: 4px;
-  --scrollbar-radius: 5px;
+  --scrollbar-width: 5.5px;
+  --scrollbar-heigth: 5.5px;
+  --scrollbar-radius: 0px;
   --scrollbar-color: var(--blue);
+}
 
-  @media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
+  :root {
     --page-padding-left: 64px;
 
     --font-size: 13px;
@@ -54,8 +56,10 @@
     --h3-size: 15px;
     --h4-size: 14px;
   }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  :root {
     --page-padding-left: 48px;
 
     --font-size: 13px;
@@ -64,8 +68,9 @@
     --h3-size: 15px;
     --h4-size: 14px;
   }
-
-  @media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 480px) {
+  :root {
     --page-padding-left: 24px;
 
     --font-size: 12px;
@@ -74,8 +79,10 @@
     --h3-size: 14px;
     --h4-size: 13px;
   }
+}
 
-  @media screen and (max-width: 320px) {
+@media screen and (max-width: 320px) {
+  :root {
     --page-padding-left: 16px;
 
     --font-size: 12px;

@@ -1,9 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./bestCoins.module.scss";
 import { NavLink } from "react-router-dom";
-import useRequest from "utils/hooks/useRequest";
 import { TCoin } from "types/coin";
-import { getCoinImage, getCoins } from "utils/constants/API";
+import { getCoinImage } from "utils/constants/API";
 import toFix from "utils/services/toFix";
 
 const getList = (coins: TCoin[]) => {
@@ -17,18 +16,12 @@ const getList = (coins: TCoin[]) => {
   ));
 };
 
-const BestCoins = (): ReactElement => {
-  const { data: coins, isLoading } = useRequest<{ data: TCoin[] }>(
-    getCoins(3, 0)
-  );
+interface Props {
+  coins: TCoin[];
+}
 
-  if (!coins || isLoading) return <></>;
-
-  return (
-    <ul className={styles.container}>
-      {getList(coins.data)}
-    </ul>
-  );
+const BestCoins = ({ coins }: Props): ReactElement => {
+  return <ul className={styles.container}>{getList(coins)}</ul>;
 };
 
 export default BestCoins;

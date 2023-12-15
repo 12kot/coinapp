@@ -13,21 +13,21 @@
 
   justify-content: space-between;
   @extend .flex;
+}
 
-  .header {
-    font-size: var(--h2-size);
-    height: 20%;
-  }
+.container .header {
+  font-size: var(--h2-size);
+  height: 20%;
+}
 
-  .content {
-    height: 80%;
+.container .content {
+  height: 80%;
 
-    justify-content: space-between;
-    position: relative;
-    @extend .flex;
+  justify-content: space-between;
+  position: relative;
+  @extend .flex;
+}
 
-    .totalPrice {
-      padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
-    }
-  }
+.container .content .totalPrice {
+  padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
 }

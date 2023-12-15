@@ -10,15 +10,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  
-  .add {
-    height: 10%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  
-  @media screen and (max-width: 1023px) {
+}
+
+.aside .add {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .aside {
     flex-basis: 0;
     padding: var(--header-height) 0;
     border-right: none;

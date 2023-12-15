@@ -8,12 +8,14 @@
   gap: var(--gap);
 
   min-height: calc(100vh - var(--header-height));
+}
 
-  .chart {
-    height: 80%;
-  }
+.content .chart {
+  height: 80%;
+}
 
-  @media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
+  .content {
     flex-basis: 0;
     padding: var(--header-height) 0;
   }

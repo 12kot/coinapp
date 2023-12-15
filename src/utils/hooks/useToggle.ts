@@ -7,7 +7,7 @@ const useToggle = (initial: boolean) => {
     setValue((val) => !val);
   };
 
-    return { value, toggle };
+  return { value, toggle };
 };
 
 export default useToggle;

@@ -1,5 +1,5 @@
-const COINS_URL = "https://api.coincap.io/v2/assets";
-const COINS_ASSETS = "https://assets.coincap.io/assets";
+const COINS_URL = 'https://api.coincap.io/v2/assets';
+const COINS_ASSETS = 'https://assets.coincap.io/assets';
 
 export const getCoins = (count: number, page: number) =>
   `${COINS_URL}?limit=${count}&offset=${count * page}`;

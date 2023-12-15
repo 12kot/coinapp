@@ -5,22 +5,20 @@
   width: 100%;
 }
 
-.item {
-  .green {
-    color: var(--green);
-  }
+.item .green {
+  color: var(--green);
+}
 
-  .red {
-    color: var(--red);
-  }
+.item .red {
+  color: var(--red);
+}
 
-  .symbol {
-    color: var(--second-font-color);
-  }
+.item .symbol {
+  color: var(--second-font-color);
+}
 
-  .img {
-    height: calc(var(--table-item-height) / 1.5);
-  }
+.item .img {
+  height: calc(var(--table-item-height) / 1.5);
 }
 
 .button {

@@ -3,7 +3,7 @@ import { MyCoinsContext } from "contexts/MyCoinsContextProvider";
 import React, { ReactElement, useContext } from "react";
 import { TCoin } from "types/coin";
 import { TMyCoinsContext } from "types/providers";
-import { getCoinsByIds } from "utils/constants/API";
+import { getCoins, getCoinsByIds } from "utils/constants/API";
 import useRequest from "utils/hooks/useRequest";
 import { getCoinsIds } from "utils/services/profile.service";
 
@@ -13,7 +13,15 @@ const HeaderContainer = (): ReactElement => {
     getCoinsByIds(getCoinsIds(coins))
   );
 
-  return <Header coins={coinsInfo?.data || []} myCoins={coins} />;
+  const { data: bestCoins } = useRequest<{ data: TCoin[] }>(getCoins(3, 0));
+
+  return (
+    <Header
+      coins={coinsInfo?.data || []}
+      myCoins={coins}
+      bestCoins={bestCoins?.data || []}
+    />
+  );
 };
 
 export default HeaderContainer;

@@ -1,23 +1,22 @@
 .container {
   position: relative;
-  &:nth-last-child(1) {
-    border-bottom: 1px solid var(--border-color);
-  }
+}
 
-  .absolute {
-    .search {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--item-padding-top) 0;
-      font-weight: bold;
-      font-size: var(--h2-size);
-      
-      &:nth-last-child(1) {
-        border-top: 1px solid var(--border-color);
-      }
-    }
-  }
+.container:nth-last-child(1) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container .absolute .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--item-padding-top) 0;
+  font-weight: bold;
+  font-size: var(--h2-size);
+}
+
+.container .absolute .search:nth-last-child(1) {
+  border-top: 1px solid var(--border-color);
 }
 
 .notFound {
