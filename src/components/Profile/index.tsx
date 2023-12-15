@@ -31,13 +31,13 @@ const Profile = ({
         <header className={styles.header}>
           <b>Profile</b>
         </header>
-        <main className={styles.content}>
+        <article className={styles.content}>
           <MyCoins oldCoins={coins} newCoins={newCoins} handleDelete={handleDelete} />
           <p className={styles.totalPrice}>
             Total price:{" "}
             <b>{`$${toFix(getTotalCoinsPrice(coins, newCoins))}`}</b>
           </p>
-        </main>
+        </article>
       </div>
     </Modal>
   );

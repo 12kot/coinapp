@@ -9,9 +9,9 @@ interface Props {
 
 const BurgerMenu = ({ isActive, toggle }: Props): ReactElement => {
   return (
-    <main className={`${styles.container} ${isActive && styles.active}`} onClick={toggle}>
+    <article className={`${styles.container} ${isActive && styles.active}`} onClick={toggle}>
       <BestCoins />
-    </main>
+    </article>
   );
 };
 

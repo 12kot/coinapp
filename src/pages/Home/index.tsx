@@ -4,7 +4,7 @@ import TableLayout from "layouts/Table";
 
 const Main = () => {
   return (
-    <main className={styles.container}>
+    <article className={styles.container}>
       <header>
         <h1>LOGO - the best information about coins</h1>
         <p>Millions choose us!</p>
@@ -12,7 +12,7 @@ const Main = () => {
       <section className={styles.table}>
         <TableLayout />
       </section>
-    </main>
+    </article>
   );
 };
 

@@ -28,7 +28,7 @@ const CoinLayout = (): ReactElement => {
   if (!coin) return <NotFound />;
 
   return (
-    <main className={styles.container}>
+    <article className={styles.container}>
       <NavLink to="/" className={styles.back}>
         <ArrowBackSVG />
       </NavLink>
@@ -37,7 +37,7 @@ const CoinLayout = (): ReactElement => {
         <CoinAside />
         <CoinContent id={coin.data.id} />
       </CoinContext.Provider>
-    </main>
+    </article>
   );
 };
 

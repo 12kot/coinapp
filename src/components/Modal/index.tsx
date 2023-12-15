@@ -13,14 +13,14 @@ const Modal = ({ isActive, setIsActive, children }: Props): ReactElement => {
   useClickOutside(ref, setIsActive, isActive);
 
   return (
-    <main className={`${styles.container} ${isActive && styles.active}`}>
+    <article className={`${styles.container} ${isActive && styles.active}`}>
       <section className={styles.modal} ref={ref}>
         <div className={styles.close} onClick={setIsActive}>
           ✖
         </div>
         {children}
       </section>
-    </main>
+    </article>
   );
 };
 

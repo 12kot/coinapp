@@ -66,10 +66,10 @@ const BuyCoinModal = ({ isActive, setIsActive }: Props) => {
         <header className={styles.header}>
           <b>Buy {coin.name}</b>
         </header>
-        <main className={styles.content}>
+        <article className={styles.content}>
           <ModalCoinInfo priceUsd={coin.priceUsd} supply={+coin.supply - getCoinCount()} />
           <BuyInput handleConfirm={handleConfirm} error={error} />
-        </main>
+        </article>
       </div>
     </Modal>
   );
