@@ -35,15 +35,15 @@ const Thead = ({ sortConfig, requestSort }: Props): ReactElement => {
         <span className={styles.rowItem}>Name</span>
         <div className={styles.rowItem}>
           {getArrow(sortConfig, "priceUsd")}
-          <button onClick={() => requestSort("priceUsd")}>Price</button>
+          <button className={styles.button} onClick={() => requestSort("priceUsd")}>Price</button>
         </div>
         <div className={styles.rowItem}>
           {getArrow(sortConfig, "volumeUsd24Hr")}
-          <button onClick={() => requestSort("volumeUsd24Hr")}>Volume</button>
+          <button className={styles.button} onClick={() => requestSort("volumeUsd24Hr")}>Volume</button>
         </div>
         <div className={styles.rowItem}>
           {getArrow(sortConfig, "changePercent24Hr")}
-          <button onClick={() => requestSort("changePercent24Hr")}>
+          <button className={styles.button} onClick={() => requestSort("changePercent24Hr")}>
             24h %
           </button>
         </div>

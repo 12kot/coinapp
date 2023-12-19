@@ -8,8 +8,8 @@ interface Props
   > {
 }
 
-const Input = ({ ...rest }: Props): ReactElement => {
-  return <input className={styles.container} {...rest} />;
+const Input = ({ className, ...rest }: Props): ReactElement => {
+  return <input className={`${styles.container} ${className}`} {...rest} />;
 };
 
 export default Input;

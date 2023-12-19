@@ -8,18 +8,18 @@
   gap: var(--gap);
 }
 
-.container .logo {
+.logo {
   height: 120px;
   max-height: 120px;
 }
 
-.container .info {
+.info {
   display: flex;
   align-items: flex-end;
   gap: var(--gap);
 }
 
-.container .info .symbol {
+.symbol {
   font-size: var(--h1-size);
   color: var(--second-font-color);
 }

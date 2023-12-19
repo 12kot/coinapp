@@ -11,12 +11,12 @@
   @extend .flex;
 }
 
-.container .header {
+.header {
   font-size: var(--h2-size);
   height: 20%;
 }
 
-.container .content {
+.content {
   @extend .flex;
   justify-content: space-between;
   height: 80%;

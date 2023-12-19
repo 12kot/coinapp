@@ -22,18 +22,18 @@
   position: relative;
 }
 
-.container .back {
+.back {
   position: absolute;
   top: var(--header-height);
   border-radius: var(--border-radius);
   transition: var(--transition);
 }
 
-.container .back svg {
+.back svg {
   display: flex;
 }
 
-.container .back:hover {
+.back:hover {
   background-color: var(--focus-color);
 }
 

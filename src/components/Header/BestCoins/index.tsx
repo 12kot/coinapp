@@ -8,8 +8,8 @@ import toFix from "utils/services/toFix";
 const getList = (coins: TCoin[]) => {
   return coins.map((coin) => (
     <li key={coin.name} className={styles.item}>
-      <NavLink to={`/coin/${coin.id}`}>
-        <img src={getCoinImage(coin.symbol)} alt={coin.symbol} />
+      <NavLink className={styles.link} to={`/coin/${coin.id}`}>
+        <img className={styles.image} src={getCoinImage(coin.symbol)} alt={coin.symbol} />
         <p>${toFix(coin.priceUsd)}</p>
       </NavLink>
     </li>

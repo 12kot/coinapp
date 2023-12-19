@@ -28,7 +28,7 @@
   background-color: var(--focus-color);
 }
 
-.item .rowItem {
+.rowItem {
   cursor: pointer;
   gap: calc(var(--gap) / 2);
 
@@ -42,11 +42,11 @@
   @extend .overflow;
 }
 
-.item .rowItem:nth-child(1),
-.item .rowItem:nth-child(2) {
+.rowItem:nth-child(1),
+.rowItem:nth-child(2) {
   justify-content: center;
 }
 
-.item .rowItem:nth-child(3) {
+.rowItem:nth-child(3) {
   justify-content: start;
 }

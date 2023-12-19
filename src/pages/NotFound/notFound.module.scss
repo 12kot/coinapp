@@ -10,27 +10,27 @@
   text-align: center;
 }
 
-.container .text {
+.text {
   font-size: var(--h3-size);
 }
 
-.container .text .notFound {
+.notFound {
   font-weight: bold;
   font-size: var(--h2-size);
 }
 
-.container .buttons {
+.buttons {
   display: flex;
   gap: var(--gap);
 }
 
-.container .buttons .button {
+.button {
   border-radius: var(--border-radius);
   border: 2px solid var(--border-color);
   transition: var(--transition);
   padding: var(--item-padding-top) var(--item-padding-left);
 }
 
-.container .buttons .button:hover {
+.button:hover {
   background-color: var(--focus-color);
 }

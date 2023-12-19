@@ -16,26 +16,26 @@
   transition: var(--transition);
 }
 
-.coin p {
+.text {
   display: flex;
   justify-content: flex-end;
 }
 
-.coin img {
+.image {
   height: 25px;
 }
 
-.coin button {
+.button {
   display: flex;
   align-items: center;
 }
 
-.coin button svg {
+.button svg {
   height: 20px;
   transition: var(--transition);
 }
 
-.coin button svg:hover {
+.button svg:hover {
   fill: var(--red);
 }
 

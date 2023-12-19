@@ -12,10 +12,9 @@
   justify-content: center;
   backdrop-filter: blur(1px);
   opacity: 0;
-
 }
 
-.container .modal {
+.modal {
   padding: var(--item-padding-top) var(--item-padding-left);
   width: fit-content;
   height: fit-content;
@@ -26,10 +25,9 @@
 
   scale: 0.6;
   transition: var(--transition);
-
 }
 
-.container .modal .close {
+.close {
   position: absolute;
   top: var(--item-padding-top);
   right: var(--item-padding-left);

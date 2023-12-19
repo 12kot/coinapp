@@ -15,12 +15,12 @@
   @extend .flex;
 }
 
-.container .header {
+.header {
   font-size: var(--h2-size);
   height: 20%;
 }
 
-.container .content {
+.content {
   height: 80%;
 
   justify-content: space-between;
@@ -28,6 +28,6 @@
   @extend .flex;
 }
 
-.container .content .totalPrice {
+.totalPrice {
   padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
 }

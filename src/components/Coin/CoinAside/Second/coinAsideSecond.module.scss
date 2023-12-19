@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.container .item {
+.item {
   display: flex;
   gap: var(--gap);
   justify-content: space-between;
@@ -18,10 +18,10 @@
   border-top: 1px solid var(--border-color);
 }
 
-.container .item:nth-last-child(1) {
+.item:nth-last-child(1) {
   border-bottom: 1px solid var(--border-color);
 }
 
-.container .item:hover {
+.item:hover {
   background-color: var(--focus-color);
 }

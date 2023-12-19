@@ -14,7 +14,7 @@
   overflow-x: scroll;
 }
 
-.coins .coin {
+.coin {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 25px;
   grid-template-rows: 1fr;
@@ -22,7 +22,7 @@
   padding: var(--item-padding-top) calc(var(--item-padding-left) / 2);
 }
 
-.coins .coin p {
+.text {
   display: flex;
   justify-content: flex-end;
 }

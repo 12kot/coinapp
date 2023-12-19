@@ -29,9 +29,7 @@ const BuyInput = ({ handleConfirm, error }: Props): ReactElement => {
     <label className={styles.input}>
       <p className={styles.label}></p>
       <Input
-        style={{
-          borderColor: !!error ? "red" : "green",
-        }}
+        className={!!error ? styles.red : styles.green}
         value={value}
         onChange={(e) => handleChange(e)}
         placeholder="0.0012"

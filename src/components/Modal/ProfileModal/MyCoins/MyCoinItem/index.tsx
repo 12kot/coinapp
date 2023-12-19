@@ -21,10 +21,10 @@ const MyCoinItem = ({ coin, newCoins, handleDelete }: Props): ReactElement => {
 
   return (
     <NavLink to={`/coin/${coin.coinId}`} key={coin.coinId} className={styles.coin}>
-      <img src={getCoinImage(coin.symbol)} alt={coin.coinId}></img>
-      <p>{coin.count}</p>
-      <p>${toFix(getCoinPrice(coin.coinId, +coin.count, newCoins))}</p>
-      <button onClick={handleClick}>
+      <img className={styles.image} src={getCoinImage(coin.symbol)} alt={coin.coinId}></img>
+      <p className={styles.text}>{coin.count}</p>
+      <p className={styles.text}>${toFix(getCoinPrice(coin.coinId, +coin.count, newCoins))}</p>
+      <button className={styles.button} onClick={handleClick}>
         <TrashSVG />
       </button>
     </NavLink>

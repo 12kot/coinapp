@@ -9,11 +9,19 @@
   @extend .flex;
 }
 
-.input .error {
+.error {
   color: var(--red);
   font-size: calc(var(--font-size) - 2px);
 }
 
 .custom__button {
   height: 30px !important;
+}
+
+.red {
+  border-color: var(--red);
+}
+
+.green {
+  border-color: var(--green);
 }

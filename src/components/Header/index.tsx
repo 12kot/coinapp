@@ -42,7 +42,7 @@ const Header = ({ myCoins, coins, bestCoins }: Props): ReactElement => {
               !!myCoins.length &&
               getCoinsPrice(myCoins, coins)}
           </button>
-          <button className={`${styles.item} ${styles.burger}`} onClick={setBurgerMenu}>
+          <button className={`${styles.burger} ${styles.item}`} onClick={setBurgerMenu}>
             <BurgerButton isActive={burgerMenu} toggle={setBurgerMenu} />
           </button>
         </div>

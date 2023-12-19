@@ -30,11 +30,10 @@ const MyCoins = ({ oldCoins, newCoins, handleDelete }: Props): ReactElement => {
   return (
     <div className={styles.coins}>
       <div className={styles.coin}>
-        <p></p>
-        <p>
+        <p className={styles.text}>
           <b>Count</b>
         </p>
-        <p>
+        <p className={styles.text}>
           <b>Price</b>
         </p>
       </div>

@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.active .item {
+.active {
   position: fixed;
   top: 0;
   width: fit-content;
@@ -17,23 +17,23 @@
   align-items: center;
 }
 
-.container .item {
+.item {
   border-bottom: 1px solid var(--border-color);
 }
 
-.container .item .rowItem {
+.rowItem {
   font-weight: bold;
 }
 
-.container .item .rowItem button {
+.button {
   height: 100%;
   font-weight: bold;
 }
 
-.container .item .rowItem svg {
+.rowItem svg {
   height: 16px;
 }
 
-.container .item:hover {
+.item:hover {
   background-color: var(--bg-color);
 }
