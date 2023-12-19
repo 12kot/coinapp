@@ -22,7 +22,7 @@ const getPages = (
 
     return (
       <Button
-        className={styles.custom__button}
+        className={styles.button}
         onClick={() => handleClick(pageNum - 1)}
         text={pageNum + ""}
         isActive={!!(activePage + 1 === pageNum)}

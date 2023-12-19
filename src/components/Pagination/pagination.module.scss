@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: center;
   height: 35px;
+  gap: calc(var(--gap) / 2);
 }
 
-.custom__button {
-  width: 35px!important;
-  min-width: 35px!important;
+.button {
+  height: 35px;
+  width: 35px;
+  min-width: 35px;
 }
