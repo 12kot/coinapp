@@ -2,40 +2,42 @@
   height: 100%;
   width: 20px;
   background-color: transparent;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.menuButton .active + .toggle2 .bars {
+.active + .toggle2 .bars,
+.active + .toggle2 #bar5,
+.active + .toggle2 #bar4,
+.active + .toggle2 #bar6,
+.active + .toggle2 {
+  transition-duration: var(--transition);
+}
+
+.active + .toggle2 .bars {
   position: absolute;
-  transition-duration: var(--transition);
 }
 
-.menuButton .active + .toggle2 #bar5 {
+.active + .toggle2 #bar5 {
   transform: scaleX(0);
-  transition-duration: var(--transition);
 }
 
-.menuButton .active + .toggle2 #bar4 {
+.active + .toggle2 #bar4 {
   width: 100%;
   transform: rotate(45deg);
-  transition-duration: var(--transition);
 }
 
-.menuButton .active + .toggle2 #bar6 {
+.active + .toggle2 #bar6 {
   width: 100%;
   transform: rotate(-45deg);
-  transition-duration: var(--transition);
 }
 
-.menuButton .active + .toggle2 {
-  transition-duration: var(--transition);
+.active + .toggle2 {
   transform: rotate(180deg);
 }
 
-.menuButton .toggle2 {
+.toggle2 {
   position: relative;
   width: 100%;
   height: 100%;
@@ -48,23 +50,23 @@
   transition-duration: var(--transition);
 }
 
-.menuButton .bars {
+.bars,
+#bar4,
+#bar6 {
   width: 100%;
+}
+
+.bars {
   height: 4px;
   background-color: var(--font-color);
   border-radius: 3px;
 }
 
-.menuButton #bar4,
-.menuButton #bar6 {
-  width: 100%;
-}
-
-.menuButton #bar5 {
+#bar5 {
   transition-duration: var(--transition);
 }
 
-.menuButton #checkbox2 {
+#checkbox2 {
   display: none;
 }
 

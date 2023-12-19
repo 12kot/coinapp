@@ -14,17 +14,17 @@
     width: 100%;
   }
 
-.item {
+  .item {
     padding: calc(var(--item-padding-top) * 2) var(--page-padding-left);
     width: 100%;
     border-top: 1px solid var(--border-color);
   }
 
-.item:nth-last-child(1) {
+  .item:nth-last-child(1) {
     border-bottom: 1px solid var(--border-color);
   }
 
-.item a {
+  .link {
     display: flex;
     justify-content: center;
     height: 100%;
